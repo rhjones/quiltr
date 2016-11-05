@@ -15,7 +15,7 @@ export default Ember.Route.extend({
       })
       .catch(() => {
         this.get('flashMessages')
-        .danger('There was a problem. Please try again.');
+        .danger('Your email address and username must be unique. Please try again.');
       });
     },
   },
