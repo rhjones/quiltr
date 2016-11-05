@@ -1,0 +1,32 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    {{navbar-header}}
+
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="nav navbar-nav">
+        {{#if isAuthenticated}}
+        <li>{{#link-to "users"}}Users{{/link-to}}</li>
+        {{/if}}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {{#if isAuthenticated}}
+        <li>{{#link-to "change-password"}}Change Password{{/link-to}}</li>
+        <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
+        {{else}}
+        <li>{{#link-to "sign-up"}}Sign Up{{/link-to}}</li>
+        <li>{{#link-to "sign-in"}}Sign In{{/link-to}}</li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h1>Welcome to Ember!</h1>
+
+{{#each flashMessages.queue as |flash|}}
+  {{flash-message flash=flash}}
+{{/each}}
+
+<div class="col-md-8 col-md-offset-2">
+  {{outlet}}
+</div>

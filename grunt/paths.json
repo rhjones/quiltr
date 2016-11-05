@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "all": [
+      "app/**/*.js",
+      "tests/**/*.js"
+    ],
+    "src": [
+      "app/**/*.js"
+    ]
+  },
+
+  "grunt": {
+    "all": [
+      "Gruntfile.js",
+      "grunt/*.js"
+    ]
+  },
+
+  "json": {
+    "all": [
+      "app/**/*.json",
+      "tests/**/*.json",
+      "grunt/*.json"
+    ]
+  }
+}

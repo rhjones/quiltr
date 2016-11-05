@@ -1,0 +1,19 @@
+{
+  "options": {
+    "config": ".jscsrc"
+  },
+
+  "status": {
+    "src": ["<%= paths.scripts.all %>"],
+    "options": {
+      "force": true
+    }
+  },
+
+  "write": {
+    "src": ["<%= paths.scripts.all %>"],
+    "options": {
+      "fix": true
+    }
+  }
+}
