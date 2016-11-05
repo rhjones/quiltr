@@ -4,3 +4,10 @@
 {{favorite-button}}
 {{make-button}}
 
+{{#each model.projects as |project|}}
+  {{project-card project=project}}
+{{/each}}
+
+<h3>Pattern Image</h3>
+<p>Pattern Image: {{model.svg}}</p>
+
