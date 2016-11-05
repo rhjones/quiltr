@@ -5,4 +5,5 @@ export default DS.Model.extend({
   colors: DS.attr('number'),
   quiltSize: DS.attr('string'),
   blockSize: DS.attr('number'),
+  projects: DS.hasMany('project')
 });
