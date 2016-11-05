@@ -10,6 +10,8 @@ Router.map(function () {
   this.route('sign-in');
   this.route('change-password');
   this.route('users');
+  this.route('patterns', { path: '/gallery' });
+  this.route('pattern', { path: '/gallery/:pattern_id'});
 });
 
 export default Router;
