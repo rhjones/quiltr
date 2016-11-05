@@ -12,6 +12,8 @@ Router.map(function () {
   this.route('users');
   this.route('patterns', { path: '/gallery' });
   this.route('pattern', { path: '/gallery/:pattern_id'});
+  this.route('project', { path: '/project/:project_id' });
+  this.route('projects');
 });
 
 export default Router;
