@@ -1,1 +1,7 @@
 <h1>My Favorites</h1>
+
+{{#each model as |favorite|}}
+  {{#if favorite.isFavoritedByCurrentUser}}
+    {{pattern-card pattern=favorite.pattern}}
+  {{/if}}
+{{/each}}
