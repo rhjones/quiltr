@@ -11,6 +11,9 @@ export default DS.Model.extend({
   projects: DS.hasMany('project'),
   favorites: DS.hasMany('favorite'),
   currentUserFavorites: Ember.computed.filterBy('favorites', 'isFavoritedByCurrentUser', true),
+  currentFavorite: Ember.computed('currentUserFavorites', function() {
+    return this.get('currentUserFavorites').objectAt(0);
+  }),
   isFavorite: Ember.computed('currentUserFavorites', function() {
     if (this.get('currentUserFavorites').length > 0) {
       return true;

@@ -5,7 +5,12 @@ export default Ember.Route.extend({
     return this.get('store').findAll('pattern');
   },
   actions: {
-    clickme(pattern) {
+    toggleFavorite(pattern) {
+      console.log(pattern.get('id'));
+      let favorite = this.get('store').createRecord('favorite', {
+        pattern: pattern
+      });
+      favorite.save();
       console.log('inside of patterns');
       console.log('pattern is', pattern);
     }
