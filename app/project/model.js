@@ -6,5 +6,5 @@ export default DS.Model.extend({
   startDate: DS.attr('date'),
   finishDate: DS.attr('date'),
   finished: DS.attr('boolean'),
-  pattern: DS.belongsTo('pattern')
+  pattern: DS.belongsTo('pattern'),
 });
