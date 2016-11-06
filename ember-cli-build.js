@@ -13,5 +13,7 @@ module.exports = function(defaults) {
 
   app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap.js');
 
+  app.import('bower_components/fabric.js/dist/fabric.min.js');
+
   return app.toTree();
 };

@@ -8,6 +8,7 @@ Install build dependencies with `npm install`. Install runtime dependencies with
 -   [ember.js](http://emberjs.com/)
 -   [ember-cli](http://www.ember-cli.com/)
 -   [Bootstrap](http://getbootstrap.com)
+-   [fabric.js](https://github.com/kangax/fabric.js)
 
 ## Structure
 
