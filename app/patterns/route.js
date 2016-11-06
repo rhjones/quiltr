@@ -6,13 +6,18 @@ export default Ember.Route.extend({
   },
   actions: {
     toggleFavorite(pattern) {
-      console.log(pattern.get('id'));
-      let favorite = this.get('store').createRecord('favorite', {
-        pattern: pattern
-      });
-      favorite.save();
-      console.log('inside of patterns');
-      console.log('pattern is', pattern);
+      if (pattern.get('isFavorite')) {
+        let currentFavorite = pattern.get('currentFavorite');
+        currentFavorite.deleteRecord();
+        currentFavorite.save();
+      }
+      else {
+        let favorite = this.get('store').createRecord('favorite', {
+          pattern: pattern
+        });
+        favorite.save();
+      }
+      
     }
   }
 });

@@ -4,10 +4,8 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 
   actions: {
-    clickme() {
-      console.log('inside of pattern-card component clickme()');
-      console.log(this.get('pattern'));
-      this.sendAction('clickme', this.get('pattern'));
+    toggleFavorite() {
+      this.sendAction('toggleFavorite', this.get('pattern'));
     }
   }
 });
