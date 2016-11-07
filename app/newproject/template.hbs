@@ -1,3 +1,8 @@
 <h1>Create new project</h1>
 
-<p>Pattern color scheme: {{model.colorScheme}}</p>
+<h2>New project</h2>
+
+{{project-form storeNewProject='storeNewProject'}}
+
+<h2>Pattern</h2>
+{{pattern-card pattern=model toggleFavorite='toggleFavorite' createNewProject='createNewProject'}}

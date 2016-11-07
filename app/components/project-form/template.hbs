@@ -1,0 +1,21 @@
+<form {{action 'storeNewProject' on='submit'}}>
+  <label for="name">Project Name</label>
+  {{input type=text id="name" value=project.name}}
+
+  <label for="startDate">Date Started:</label>
+  <input type="date" id="startDate">
+
+  <label for="finishDate">Date Completed:</label>
+  <input type="date" id="finishDate">
+
+  <label for="finished">Project Status:</label>
+  <select id="finished">
+    <option value="false">In progress</option>
+    <option value="true">Completed</option>
+  </select>
+
+  <label for="notes">Notes:</label>
+  {{textarea value=project.notes cols="80" rows="6"}}
+
+  <input class="btn btn-default" type="submit" id="submit" value="Submit">
+</form>

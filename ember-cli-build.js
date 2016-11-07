@@ -15,5 +15,8 @@ module.exports = function(defaults) {
 
   app.import('bower_components/fabric.js/dist/fabric.min.js');
 
+  app.import('bower_components/jquery-ui/jquery-ui.js');
+  app.import('bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css');
+
   return app.toTree();
 };
