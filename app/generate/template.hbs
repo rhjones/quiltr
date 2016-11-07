@@ -1,0 +1,64 @@
+<h1>Create a pattern</h1>
+
+<form {{ action 'getPatternParams' on='submit'}}>
+  <label for="quiltsize">Quilt Size</label>
+  <div>
+    <div class="btn-group" role="group" data-toggle="buttons">
+      <label class="btn btn-default active">
+        <input type="radio" name="quiltSize" value="lap" checked>
+        Baby/Lap
+      </label>
+      <label class="btn btn-default">
+        <input type="radio" name="quiltSize" value="twin">
+        Twin
+      </label>
+      <label class="btn btn-default">
+        <input type="radio" name="quiltSize" value="full">
+        Double/Full
+      </label>
+      <label class="btn btn-default">
+        <input type="radio" name="quiltSize" value="queen">
+        Queen
+      </label>
+      <label class="btn btn-default">
+        <input type="radio" name="quiltSize" value="king">
+        King
+      </label>
+    </div>
+  </div>
+
+  <label for="colors">Colors</label>
+  <div>
+    <div class="btn-group" role="group" data-toggle="buttons">
+      <label class="btn btn-default active">
+        <input type="radio" name="colors" value="2" checked> Two
+      </label>
+      <label class="btn btn-default">
+        <input type="radio" name="colors" value="3"> Three
+      </label>
+      <label class="btn btn-default">
+          <input type="radio" name="colors" value="4"> Four
+      </label>
+      <label class="btn btn-default">
+          <input type="radio" name="colors" value="5"> Five
+      </label>
+    </div>
+  </div>
+
+  <label for="blockSize">Block Size</label>
+  <div>
+    <div class="btn-group" role="group" data-toggle="buttons">
+      <label class="btn btn-default active">
+        <input type="radio" name="blockSize" value="3" checked> 3"
+      </label>
+      <label class="btn btn-default">
+        <input type="radio" name="blockSize" value="6"> 6"
+      </label>
+    </div>
+  </div>
+  
+  <input class="btn btn-default" type="submit" id="submit" value="Submit">
+
+</form>
+
+{{pattern-canvas}}

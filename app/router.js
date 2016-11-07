@@ -16,6 +16,7 @@ Router.map(function () {
   this.route('projects');
   this.route('favorites');
   this.route('favorite', { path: '/favorites/:favorite_id' });
+  this.route('generate');
 });
 
 export default Router;
