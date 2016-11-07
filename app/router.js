@@ -10,13 +10,14 @@ Router.map(function () {
   this.route('sign-in');
   this.route('change-password');
   this.route('users');
-  this.route('patterns', { path: '/gallery' });
-  this.route('pattern', { path: '/gallery/:pattern_id' });
-  this.route('project', { path: '/project/:project_id' });
-  this.route('projects');
+  this.route('patterns', { path: '/gallery' }, function() {});
+  this.route('pattern', { path: '/patterns/:pattern_id' });
+  this.route('project', { path: '/projects/:project_id' });
+  this.route('projects', function() {});
   this.route('favorites');
   this.route('favorite', { path: '/favorites/:favorite_id' });
   this.route('generate');
+  this.route('newproject', { path: '/patterns/:pattern_id/newproject'});
 });
 
 export default Router;

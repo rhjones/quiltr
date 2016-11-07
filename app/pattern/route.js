@@ -19,7 +19,9 @@ export default Ember.Route.extend({
         });
         favorite.save();
       }
-      
-    }
+    },
+    createNewProject(pattern) {
+      this.transitionTo('newproject', pattern);
+    },
   }
 });

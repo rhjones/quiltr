@@ -3,7 +3,7 @@
 {{pattern-metadata pattern=model}}
 
 {{favorite-button pattern=model toggleFavorite='toggleFavorite'}} 
-{{make-button}}
+{{make-button pattern=model createNewProject='createNewProject'}}
 
 {{#each model.projects as |project|}}
   {{project-card project=project}}

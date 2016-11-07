@@ -6,4 +6,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   auth: Ember.inject.service(),
   isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
+  actions: {
+    createNewProject() {
+      console.log('in component; clicked make');
+      this.sendAction('createNewProject', this.get('pattern'));
+    }
+  }
 });
