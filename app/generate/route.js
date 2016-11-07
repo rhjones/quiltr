@@ -10,8 +10,8 @@ export default Ember.Route.extend({
     storeAndFavoritePattern(patternData) {
       // creating a new pattern automatically creates a favorite in Rails
       let newPattern = this.get('store').createRecord('pattern', patternData);
-      newPattern.save();
-      this.transitionTo('pattern', newPattern);
+      let savedPattern = newPattern.save();
+      this.transitionTo('pattern', savedPattern);
     }
   },
         
