@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   model (params) {
     return this.get('store').findRecord('project', params.project_id);
   },
-  afterModel(model, transition) {
+  afterModel(model) {
     return model.get('pattern');
   }
 });

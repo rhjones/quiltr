@@ -179,7 +179,7 @@ export default Ember.Service.extend({
       for (let j = 0; j < dimensions.columns; j++) {
         let blockKey = blockKeys[Math.floor((blockKeys.length * Math.random()) * 1)];
         let blockType = blockTypes[blockKey];
-        let block = blockType.block;
+        // let block = blockType.block;
         patternCanvas.add(blockType.block(x, y, blockType.color, patternBlockSize));
         blockTypes[blockKey].count++;
         x += patternBlockSize;
