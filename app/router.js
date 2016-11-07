@@ -15,7 +15,6 @@ Router.map(function () {
   this.route('project', { path: '/projects/:project_id' });
   this.route('projects', function() {});
   this.route('favorites');
-  this.route('favorite', { path: '/favorites/:favorite_id' });
   this.route('generate');
   this.route('newproject', { path: '/patterns/:pattern_id/newproject'});
 });
