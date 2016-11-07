@@ -21,8 +21,8 @@ export default Ember.Component.extend({
     storeNewProject() {
       let newProject = {
         name: this.get('project.name'),
-        startDate: this.$('#startDate').val(),
-        finishDate: this.$('#finishDate').val(),
+        startDate: new Date(this.$('#startDate').val()),
+        finishDate: new Date(this.$('#finishDate').val()),
         finished: this.$('#finished').val(),
         notes: this.get('project.notes'),
         pattern: this.get('pattern'),
