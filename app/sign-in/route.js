@@ -16,7 +16,7 @@ export default Ember.Route.extend({
         } 
 
         else {
-          this.transitionTo('application')
+          this.transitionTo('application');
         }
       })
       .then(() => this.get('flashMessages').success('Thanks for signing in!'))
