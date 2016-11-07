@@ -7,7 +7,10 @@ export default Ember.Route.extend({
     return this.get('store').findRecord('project', params.project_id);
   },
   afterModel(model) {
-    return model.get('pattern');
+    return Ember.RSVP.hash({
+      projectUploads: model.get('projectUploads'),
+      pattern: model.get('pattern'),
+    })
   },
   actions: {
     uploadPhoto(data) {
