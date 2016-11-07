@@ -3,35 +3,40 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
   schemeKeys: ['neon', 'wes', 'pool'],
-  colorSchemes: {
-    2: {
+  patternData: {},
+  colorSchemes: [
+    {
       neon: ['rgba(112,141,145,1)'],
       pool: ['rgba(5,131,156,1)'],
       wes: ['rgba(154,50,0,1)'],
     },
-    3: {
+    {
       neon: ['rgba(0,255,200,1)', 'rgba(176,255,5,1)'],
       pool: ['rgba(52,194,182,1)', 'rgba(5,131,156,1)'],
       wes: ['rgba(190,168,28,1)', 'rgba(154,50,0,1)']
     },
-    4: {
+    {
       neon: ['rgba(0,255,200,1)', 'rgba(255,179,0,1)', 'rgba(176,255,5,1)', 'rgba(255,0,102,1)'],
       pool: ['rgba(52,194,182,1)', 'rgba(202,196,208,1)', 'rgba(182,241,29,1)', 'rgba(5,131,156,1)'],
       wes: ['rgba(190,168,28,1)', 'rgba(123,136,95,1)', 'rgba(83,143,105,1)', 'rgba(154,50,0,1)']
     },
-    5: {
+    {
       neon: ['rgba(0,255,200,1)', 'rgba(255,179,0,1)', 'rgba(176,255,5,1)', 'rgba(255,0,102,1)', 'rgba(112,141,145,1)'],
       pool: ['rgba(52,194,182,1)', 'rgba(251,246,40,1)', 'rgba(202,196,208,1)', 'rgba(182,241,29,1)', 'rgba(5,131,156,1)'],
       wes: ['rgba(190,168,28,1)', 'rgba(123,136,95,1)', 'rgba(83,143,105,1)', 'rgba(59,70,59,1)', 'rgba(154,50,0,1)']
     },
-  },
+  ],
   sizes: {
     lap: {
       width: 36,
       height: 36,
     },
+    baby: {
+      width: 36,
+      height: 60,
+    },
     twin: {
-      width: 66,
+      width: 72,
       height: 96,
     },
     full: {
@@ -39,11 +44,11 @@ export default Ember.Service.extend({
       height: 96,
     },
     queen: {
-      width: 90,
+      width: 96,
       height: 96,
     },
     king: {
-      width: 102,
+      width: 108,
       height: 96,
     },
   },
@@ -91,9 +96,10 @@ export default Ember.Service.extend({
   },
   getColorScheme(colors) {
     let schemeKey = this.get('schemeKeys')[Math.floor((this.get('schemeKeys').length * Math.random()) * 1)];
-    return this.get('colorSchemes')[colors][schemeKey];
+    this.get('patternData').colorScheme = schemeKey;
+    return this.get('colorSchemes')[colors - 1][schemeKey];
   },
-  getPatternParams() {
+  generatePattern() {
     let quiltSize = Ember.$("input:radio[name='quiltSize']:checked").val();
     let colors = Ember.$("input:radio[name='colors']:checked").val();
     let blockSize = Ember.$("input:radio[name='blockSize']:checked").val();
@@ -104,8 +110,14 @@ export default Ember.Service.extend({
     this.prepForDrawing(quiltSize, colors, blockSize);
   },
   prepForDrawing(quiltSize, colors, blockSize) {
+    console.log('patternData is', this.get('patternData'));
+    this.get('patternData').quiltSize = quiltSize;
+    this.get('patternData').colors = colors;
+    this.get('patternData').blockSize = blockSize;
     let dimensions = this.calculateDimensions(quiltSize, blockSize);
     let colorScheme = this.getColorScheme(colors);
+
+    console.log('patternData is', this.get('patternData'));
 
     console.log('inside drawPattern');
     console.log('quiltWidth', dimensions.quiltWidth);
@@ -126,47 +138,54 @@ export default Ember.Service.extend({
   },
   drawPattern(patternCanvas, dimensions, colorScheme, patternBlockSize) {
     console.log('drawing pattern!');
+    console.log('colorScheme', colorScheme);
     let x = 0;
     let y = 0;
 
-    let blockTypes = [this.square, this.hstTopLeft, this.hstTopRight, this.hstBottomLeft, this.hstBottomRight];
+    let blockTypes = {
+      square: {
+        block: this.square,
+        color: colorScheme[0],
+        count: 0,
+      },
+      hstTopLeft: {
+        block: this.hstTopLeft,
+        color: colorScheme[1] || colorScheme[0],
+        count: 0,
+      },
+      hstTopRight: {
+        block: this.hstTopRight,
+        color: colorScheme[2] || colorScheme[Math.floor(Math.random()*2)] || colorScheme[0],
+        count: 0,
+      },
+      hstBottomLeft: {
+        block: this.hstBottomLeft,
+        color: colorScheme[3] || colorScheme[Math.floor(Math.random()*3)] || colorScheme[0],
+        count: 0,
+      },
+      hstBottomRight: {
+        block: this.hstBottomRight,
+        color: colorScheme[4] || colorScheme[Math.floor(Math.random()*4)] || colorScheme[0],
+        count: 0,
+      },
+    };
+
+    let blockKeys = Object.keys(blockTypes);
+    console.log(blockKeys);
 
     for (let i = 0; i < dimensions.rows; i++) {
       for (let j = 0; j < dimensions.columns; j++) {
-        let block = blockTypes[Math.floor(Math.random() * blockTypes.length)];
-        // switch (block) {
-        //   case blockTypes[0]:
-        //     squares++
-        //     break;
-        //   case blockTypes[1]:
-        //     hstsTL++;
-        //     hsts++;
-        //     break;
-        //   case blockTypes[2]:
-        //     hstsTR++;
-        //     hsts++;
-        //     break;
-        //   case this.blockTypes[3]:
-        //     hstsBL++;
-        //     hsts++;
-        //     break;
-        //   case this.blockTypes[4]:
-        //     hstsBR++;
-        //     hsts++;
-        //     break;
-        // }
-        patternCanvas.add(block(x,y, 'red', patternBlockSize));
+        let blockKey = blockKeys[Math.floor((blockKeys.length * Math.random()) * 1)];
+        let blockType = blockTypes[blockKey];
+        let block = blockType.block;
+        patternCanvas.add(blockType.block(x, y, blockType.color, patternBlockSize));
+        blockTypes[blockKey].count++;
         x += patternBlockSize;
       }
       x = 0;
       y += patternBlockSize;
     }
 
-
-
-    // patternCanvas.add(this.hstBottomLeft(x, y, 'red', patternBlockSize));
+    this.get('patternData').svg = patternCanvas.toSVG();
   },
-  
-  
-  
 });
