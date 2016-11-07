@@ -6,9 +6,11 @@ export default Ember.Route.extend({
       console.log('inside newproject/route');
       console.log(newProject);
       let project = this.get('store').createRecord('project', newProject);
-      let savedProject = project.save();
-      console.log('saved project', savedProject);
-      // this.transitionTo('project', savedProject);
+      project.save()
+      .then((project) => {
+        console.log('saved project');
+        this.transitionTo('project', project)
+      });
     },
     toggleFavorite(pattern) {
       if (pattern.get('isFavorite')) {
