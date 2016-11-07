@@ -9,11 +9,8 @@ export default Ember.Component.extend({
   quiltrFabric: Ember.inject.service(),
   actions: {
     storeAndFavoritePattern() {
-      console.log('store and favorite pattern');
       let patternData = this.get('quiltrFabric').patternData;
-      console.log(patternData);
-
-      // this.sendAction('storeAndFavoritePattern', svgString);
+      this.sendAction('storeAndFavoritePattern', patternData);
     },
   },
 });
