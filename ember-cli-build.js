@@ -18,5 +18,7 @@ module.exports = function(defaults) {
   app.import('bower_components/jquery-ui/jquery-ui.js');
   app.import('bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css');
 
+  app.import('bower_components/moment/moment.js');
+
   return app.toTree();
 };

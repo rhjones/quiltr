@@ -1,1 +1,5 @@
-{{outlet}}
+<p>Series of individual project card views?</p>
+
+{{#each model as |project|}}
+  <p>{{#link-to 'project' project}}Project {{project.id}}{{/link-to}}</p>
+{{/each}}
