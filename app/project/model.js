@@ -7,4 +7,5 @@ export default DS.Model.extend({
   finishDate: DS.attr('date'),
   finished: DS.attr('boolean'),
   pattern: DS.belongsTo('pattern'),
+  user: DS.belongsTo('user'),
 });
