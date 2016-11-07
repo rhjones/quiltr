@@ -82,6 +82,8 @@ export default Ember.Service.extend({
     return path;
   },
   calculateDimensions(quiltSize, blockSize) {
+    console.log('inside calculate dimensions');
+    console.log('quiltWidth', this.get('sizes')[quiltSize].width);
     let quiltWidth = this.get('sizes')[quiltSize].width;
     let quiltHeight = this.get('sizes')[quiltSize].height;
     let columns = quiltWidth / blockSize;
