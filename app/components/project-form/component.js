@@ -1,8 +1,12 @@
 import Ember from 'ember';
 
+
+// project-form <-- newproject
+
 export default Ember.Component.extend({
   project: {
     name: null,
+    notes: null,
   },
   didInsertElement() {
     // use jQuery UI datepicker in browsers that don't handle HTML5 date inputs 
@@ -15,11 +19,16 @@ export default Ember.Component.extend({
   },
   actions: {
     storeNewProject() {
-      console.log('name', this.get('project.name'));
-      console.log('startDate', this.$('#startDate').val());
-      console.log('finishDate', this.$('#finishDate').val());
-      console.log('finished', this.$('#finished').val());
-      console.log('notes', this.get('project.notes'));
+      let newProject = {
+        name: this.get('project.name'),
+        startDate: this.$('#startDate').val(),
+        finishDate: this.$('#finishDate').val(),
+        finished: this.$('#finished').val(),
+        notes: this.get('project.notes'),
+        pattern: this.get('pattern'),
+      };
+      console.log(newProject);
+      this.sendAction('storeNewProject', newProject);
     }
   }
 });
