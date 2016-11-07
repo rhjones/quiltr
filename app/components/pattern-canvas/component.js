@@ -3,13 +3,15 @@ import Ember from 'ember';
 
 // pattern-canvas <-- generate
 // pattern-canvas <-- pattern
+// pattern-canvas <-- pattern-card <-- gallery (patterns)
 
 export default Ember.Component.extend({
   classNames: ['canvas-container'],
   quiltrFabric: Ember.inject.service(),
   didRender() {
     if(this.get('pattern')) {
-      let patternCanvas = new fabric.StaticCanvas(canvas);
+      let id = `canvas${this.get('pattern.id')}`;
+      let patternCanvas = new fabric.StaticCanvas(`canvas${this.get('pattern.id')}`);
       let svgString = this.get('pattern.svg');
       // set canvas width & height based on pattern data
       let dimensions = this.get('quiltrFabric').calculateDimensions(this.get('pattern.quiltSize'), this.get('pattern.blockSize'));
