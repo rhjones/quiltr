@@ -8,5 +8,9 @@ export default Ember.Route.extend({
       patterns: this.store.findAll('pattern'),
     });
   },
+  // afterModel(model, transition) {
+  //   // return model.each.get('pattern');
+  //   Ember.RSVP.all(model.getEach('pattern'));
+  // }
 
 });
