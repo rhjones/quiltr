@@ -1,12 +1,16 @@
 <h1>Create a pattern</h1>
 
-<form {{ action 'getPatternParams' on='submit'}}>
+<form {{ action 'generatePattern' on='submit'}}>
   <label for="quiltsize">Quilt Size</label>
   <div>
     <div class="btn-group" role="group" data-toggle="buttons">
       <label class="btn btn-default active">
         <input type="radio" name="quiltSize" value="lap" checked>
-        Baby/Lap
+        Lap
+      </label>
+      <label class="btn btn-default">
+        <input type="radio" name="quiltSize" value="baby">
+        Baby
       </label>
       <label class="btn btn-default">
         <input type="radio" name="quiltSize" value="twin">
@@ -31,16 +35,16 @@
   <div>
     <div class="btn-group" role="group" data-toggle="buttons">
       <label class="btn btn-default active">
-        <input type="radio" name="colors" value="2" checked> Two
+        <input type="radio" name="colors" value="1" checked> One
       </label>
       <label class="btn btn-default">
-        <input type="radio" name="colors" value="3"> Three
+        <input type="radio" name="colors" value="2"> Two
+      </label>
+      <label class="btn btn-default">
+          <input type="radio" name="colors" value="3"> Three
       </label>
       <label class="btn btn-default">
           <input type="radio" name="colors" value="4"> Four
-      </label>
-      <label class="btn btn-default">
-          <input type="radio" name="colors" value="5"> Five
       </label>
     </div>
   </div>
@@ -48,11 +52,11 @@
   <label for="blockSize">Block Size</label>
   <div>
     <div class="btn-group" role="group" data-toggle="buttons">
-      <label class="btn btn-default active">
-        <input type="radio" name="blockSize" value="3" checked> 3"
-      </label>
       <label class="btn btn-default">
-        <input type="radio" name="blockSize" value="6"> 6"
+        <input type="radio" name="blockSize" value="6" checked> 6"
+      </label>
+      <label class="btn btn-default active">
+        <input type="radio" name="blockSize" value="12" checked> 12"
       </label>
     </div>
   </div>
@@ -60,5 +64,9 @@
   <input class="btn btn-default" type="submit" id="submit" value="Submit">
 
 </form>
+
+{{sign-in-prompt}}
+
+{{store-pattern}}
 
 {{pattern-canvas}}
