@@ -10,5 +10,21 @@ export default Ember.Route.extend({
       console.log('saved project', savedProject);
       // this.transitionTo('project', savedProject);
     },
+    toggleFavorite(pattern) {
+      if (pattern.get('isFavorite')) {
+        let currentFavorite = pattern.get('currentFavorite');
+        currentFavorite.deleteRecord();
+        currentFavorite.save();
+      }
+      else {
+        let favorite = this.get('store').createRecord('favorite', {
+          pattern: pattern
+        });
+        favorite.save();
+      } 
+    },
+    createNewProject(pattern) {
+      this.transitionTo('newproject', pattern);
+    },
   }
 });

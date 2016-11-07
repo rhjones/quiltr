@@ -5,6 +5,6 @@
     <p>Pattern id: {{favorite.pattern.id}}</p>
     <p>Pattern quiltSize: {{favorite.pattern.quiltSize}}</p>
     <p>Pattern colors: {{favorite.pattern.colors}}</p>
-    {{pattern-card pattern=favorite.pattern}}
+    {{pattern-card pattern=favorite.pattern toggleFavorite='toggleFavorite' createNewProject='createNewProject'}}
   {{/if}}
 {{/each}}
