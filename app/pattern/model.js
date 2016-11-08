@@ -14,5 +14,4 @@ export default DS.Model.extend({
     // used to toggle favorite throughout app
     return this.get('favorites').filterBy('belongsToCurrentUser', true).objectAt(0);
   }),
-  isFavoriteOfCurrentUser: Ember.computed.bool('currentUserFavorite'),
 });

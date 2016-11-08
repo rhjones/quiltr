@@ -1,17 +1,15 @@
 import Ember from 'ember';
 
-// favorite-button <-- pattern-card <-- gallery (patterns)
 // favorite-button <-- pattern
+// favorite-button <-- pattern-card <-- gallery (patterns)
 // favorite-button <-- pattern-card <-- favorites
 
 
-// 
 export default Ember.Component.extend({
   auth: Ember.inject.service(),
   store: Ember.inject.service(),
   tagName: 'span',
   classNameBindings: ['isFavorite'],
-  isFavoritedByCurrentUser: Ember.computed.alias('pattern.isFavoritedByCurrentUser'),
   isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
   actions: {
     toggleFavorite() {
