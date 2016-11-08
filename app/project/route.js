@@ -17,9 +17,9 @@ export default Ember.Route.extend({
     uploadPhoto(data) {
       console.log('inside project/route');
       console.log(data.get('project_upload[photo]'));
+      console.log('project id', data.get('project_upload[project_id]'));
       return this.get('uploads').saveUpload(data, '/project_uploads')
-      // revisit this: want to stay on project page with photo
-       // .then(() => this.transitionTo('projects')) 
+       .then(() => this.refresh()) 
        .catch((error) => console.error(error));
     },
     removePhoto(photo) {
