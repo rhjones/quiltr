@@ -1,16 +1,28 @@
 <p>Project name: {{model.name}}</p>
-<p>Date started: {{formatDate model.startDate}}</p>
-<p>Date finished: {{model.finishedDate}}</p>
-<p>Finished? {{model.finished}}</p>
-<p class="project-notes">Notes: {{model.notes}}</p>
+<p>Made by: {{model.user.username}}</p>
+{{#if model.startDate}}
+  <p>Date started: {{formatDate model.startDate}}</p>
+{{/if}}
+
+{{#if model.finishedDate}}
+  <p>Date finished: {{model.finishedDate}}</p>
+{{/if}}
+
+
+<p>Project status: {{#if model.finished}}Finished{{else}}In progress{{/if}}</p>
+{{#if model.notes}}
+  <p class="project-notes">Notes: {{model.notes}}</p>
+{{/if}}
 
 {{#each model.projectUploads as |photo|}}
   {{project-photo photo=photo project=model removePhoto='removePhoto'}}
 {{/each}}
 
-{{project-upload-form project=model uploadPhoto='uploadPhoto'}}
+{{#if (currentUser model.user.id)}}
+  {{project-upload-form project=model uploadPhoto='uploadPhoto'}}
+{{/if}}
 
 <p>Pattern: {{model.pattern.id}}</p>
 {{pattern-card pattern=model.pattern}}
 
-<p>Made by: {{model.user.username}}</p>
+
