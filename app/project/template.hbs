@@ -2,7 +2,12 @@
 <p>Date started: {{formatDate model.startDate}}</p>
 <p>Date finished: {{model.finishedDate}}</p>
 <p>Finished? {{model.finished}}</p>
-<p>Notes: {{model.notes}}</p>
+<p class="project-notes">Notes: {{model.notes}}</p>
+
+{{#each model.projectUploads as |upload|}}
+
+  <p><img src="{{upload.photoUrl}}" alt="{{model.name}}"></p>
+{{/each}}
 
 {{project-upload-form project=model uploadPhoto='uploadPhoto'}}
 

@@ -8,4 +8,5 @@ export default DS.Model.extend({
   finished: DS.attr('boolean'),
   pattern: DS.belongsTo('pattern'),
   user: DS.belongsTo('user'),
+  projectUploads: DS.hasMany('projectUpload'),
 });
