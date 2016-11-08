@@ -12,10 +12,4 @@ export default Ember.Route.extend({
   //   // return model.each.get('pattern');
   //   Ember.RSVP.all(model.getEach('pattern'));
   // },
-  actions: {
-    createNewProject(pattern) {
-      this.transitionTo('newproject', pattern);
-    },
-  }
-
 });

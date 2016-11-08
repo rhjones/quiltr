@@ -5,7 +5,7 @@
 <p>Current user favorite: {{model.currentUserFavorite}}</p>
 
 {{favorite-button pattern=model favorite=model.currentUserFavorite}} 
-{{make-button pattern=model createNewProject='createNewProject'}}
+{{make-button pattern=model}}
 
 {{#each model.projects as |project|}}
   {{project-card project=project}}
