@@ -9,7 +9,7 @@ export default Ember.Route.extend({
       project.save()
       .then((project) => {
         console.log('saved project');
-        this.transitionTo('project', project)
+        this.transitionTo('project', project);
       });
     },
     toggleFavorite(pattern) {
