@@ -3,7 +3,11 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   auth: Ember.inject.service(),
   flashMessages: Ember.inject.service(),
-
+  beforeModel() {
+    if (this.get('auth.credentials.token')) {
+      this.transitionTo('application');
+    }
+  },
   actions: {
     signUp (credentials) {
       this.get('auth').signUp(credentials)
