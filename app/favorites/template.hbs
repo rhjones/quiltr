@@ -1,10 +1,10 @@
 <h1>My Favorites</h1>
 
 {{#each model.favorites as |favorite|}}
-  {{#if favorite.isFavoritedByCurrentUser}}
+  {{#if favorite.belongsToCurrentUser}}
     <p>Pattern id: {{favorite.pattern.id}}</p>
     <p>Pattern quiltSize: {{favorite.pattern.quiltSize}}</p>
     <p>Pattern colors: {{favorite.pattern.colors}}</p>
-    {{pattern-card pattern=favorite.pattern toggleFavorite='toggleFavorite' createNewProject='createNewProject'}}
+    {{pattern-card pattern=favorite.pattern}}
   {{/if}}
 {{/each}}
