@@ -14,12 +14,11 @@ export default Ember.Route.extend({
       return this.get('auth').signIn(credentials)
       // .then(() => {
       //   let previousTransition = this.get('previousTransition');
-
       //   if (previousTransition) {
+      //     console.log('previous transition before sign-in!');
       //     this.set('previousTransition', null);
       //     previousTransition.retry();
       //   } 
-
       //   else {
       //     this.transitionTo('application');
       //   }
