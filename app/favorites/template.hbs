@@ -1,10 +1,12 @@
 <h1>My Favorites</h1>
 
-{{#each model.favorites as |favorite|}}
-  {{#if favorite.belongsToCurrentUser}}
+{{#unless model}}
+  <p>Looks like you haven't saved any patterns as favorites yet.</p>
+  <p>Why don't you check out the {{#link-to 'patterns'}}gallery{{/link-to}} or take a spin with the {{#link-to 'generate'}}pattern generator{{/link-to}}?</p>
+{{/unless}}
+{{#each model as |favorite|}}
     <p>Pattern id: {{favorite.pattern.id}}</p>
     <p>Pattern quiltSize: {{favorite.pattern.quiltSize}}</p>
     <p>Pattern colors: {{favorite.pattern.colors}}</p>
     {{pattern-card pattern=favorite.pattern}}
-  {{/if}}
 {{/each}}

@@ -13,14 +13,8 @@ export default Ember.Route.extend({
     }
   },
   model() {
-    // return this.get('store').findAll('favorite');
-    return Ember.RSVP.hash({
-      favorites: this.store.findAll('favorite'),
-      patterns: this.store.findAll('pattern'),
+    return this.get('store').query('favorite', {
+      user: this.get('auth.credentials.id')
     });
   },
-  // afterModel(model, transition) {
-  //   // return model.each.get('pattern');
-  //   Ember.RSVP.all(model.getEach('pattern'));
-  // },
 });
