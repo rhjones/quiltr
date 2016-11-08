@@ -1,7 +1,11 @@
 import Ember from 'ember';
 
-// project --> pattern-card
 // project --> project-photo
+// project --> project-delete-button
+// project --> project-upload-form
+
+// project --> pattern-card
+
 export default Ember.Route.extend({
   uploads: Ember.inject.service(),
   model (params) {
@@ -32,5 +36,14 @@ export default Ember.Route.extend({
           this.get('flashMessages').success('Photo deleted.');
         });
     },
+    deleteProject(project) {
+      console.log('deleting project');
+      console.log(project);
+      project.deleteRecord();
+      project.save()
+      .then(() => this.transitionTo('projects'))
+      .then(() => this.get('flashMessages').success('Project deleted.'))
+      .catch(() => this.get('flashMessages').danger('There was a problem. Please try again.'));
+    }
   }
 });

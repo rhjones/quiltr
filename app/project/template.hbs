@@ -1,3 +1,7 @@
+{{#if (currentUser model.user.id)}}
+  {{project-delete-button project=model deleteProject='deleteProject'}}
+{{/if}}
+
 <p>Project name: {{model.name}}</p>
 <p>Made by: {{model.user.username}}</p>
 {{#if model.startDate}}
