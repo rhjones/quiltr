@@ -1,4 +1,10 @@
-<div style="width: 200px;">{{#link-to 'pattern' pattern}}{{pattern-canvas pattern=pattern}}{{/link-to}}</div>
+<div>
+  {{#link-to 'pattern' pattern}}
+  <div class="pattern-svg">
+    {{{pattern.svg}}}
+  </div>
+  {{/link-to}}
+</div>
 
 {{favorite-button pattern=pattern favorite=pattern.currentUserFavorite}} 
 
