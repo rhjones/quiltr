@@ -12,8 +12,9 @@ export default Ember.Route.extend({
       })
     }
   },
-  model () {
-    return this.get('store').findAll('project');
-    // return projects.filterBy('belongsToCurrentUser', true);
+  model() {
+    return this.get('store').query('project', {
+      user: this.get('auth.credentials.id')
+    });
   },
 });

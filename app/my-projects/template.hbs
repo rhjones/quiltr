@@ -1,6 +1,10 @@
 <h1>My Projects</h1>
+
+{{#unless model}}
+  <p>Looks like you haven't shared any projects yet.</p>
+  <p>Looking for inspiration? Check out the {{#link-to 'patterns'}}pattern gallery{{/link-to}} or explore the {{#link-to 'projects'}}projects others have shared{{/link-to}}.</p>
+{{/unless}}
+
 {{#each model as |project|}}
-  {{#if project.belongsToCurrentUser}}
-    <p>{{project-card project=project class="col-sm-4 col-md-3"}}</p>
-  {{/if}}
+  <p>{{project-card project=project class="col-sm-4 col-md-3"}}</p>
 {{/each}}
