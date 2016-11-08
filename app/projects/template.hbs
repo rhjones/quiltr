@@ -1,5 +1,4 @@
-<p>Series of individual project card views?</p>
-
+<h1>Project Gallery</h1>
 {{#each model as |project|}}
-  <p>{{#link-to 'project' project}}Project {{project.id}}{{/link-to}}</p>
+  <p>{{project-card project=project}}</p>
 {{/each}}

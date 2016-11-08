@@ -1,7 +1,25 @@
-<h2>Project: {{project.name}}</h2>
-<p>Notes: {{project.notes}}</p>
-<p>Start Date: {{project.start_date}}</p>
-<p>Finish Date: {{project.finish_date}}</p>
-<p>Finished? {{project.finished}}</p>
+<div class="project-card">
+  {{#link-to 'project' project}}
+    <div class="card-square-image">
+      {{#if project.projectUploads}}
+        <img src="{{project.projectUploads.firstObject.photoUrl}}" alt="{{project.name}}" class="project-card-photo">
+      {{else}}
+        <i class="fa fa-picture-o card-missing-image" aria-hidden="true"></i>
+      {{/if}}
+    </div>
+  {{/link-to}}
+
+  <div class="card-caption">
+    <p>
+      {{#link-to 'project' project}}
+        {{project.name}} 
+      {{/link-to}}
+      by {{project.user.username}}
+    </p>
+  </div>
+</div>
+
+
+
 
 
