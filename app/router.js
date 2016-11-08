@@ -18,6 +18,7 @@ Router.map(function () {
   this.route('favorites');
   this.route('generate');
   this.route('newproject', { path: '/patterns/:pattern_id/newproject'});
+  this.route('my-projects');
 });
 
 export default Router;

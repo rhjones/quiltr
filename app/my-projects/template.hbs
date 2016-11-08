@@ -1,0 +1,6 @@
+<h1>Your Projects</h1>
+{{#each model as |project|}}
+  {{#if project.belongsToCurrentUser}}
+    <p>{{project-card project=project class="col-sm-4 col-md-3"}}</p>
+  {{/if}}
+{{/each}}
