@@ -2,28 +2,32 @@ import Ember from 'ember';
 /*global fabric*/
 
 export default Ember.Service.extend({
-  schemeKeys: ['neon', 'wes', 'pool'],
   patternData: {},
   colorSchemes: [
     {
       neon: ['rgba(112,141,145,1)'],
       pool: ['rgba(5,131,156,1)'],
-      wes: ['rgba(154,50,0,1)'],
+      greenAndOrange: ['#f1081f'],
     },
     {
       neon: ['rgba(0,255,200,1)', 'rgba(176,255,5,1)'],
       pool: ['rgba(52,194,182,1)', 'rgba(5,131,156,1)'],
-      wes: ['rgba(190,168,28,1)', 'rgba(154,50,0,1)']
+      greenAndOrange: ['#f1081f', '#fa564d']
+    },
+    {
+      neon: ['rgba(0,255,200,1)', 'rgba(176,255,5,1)', 'rgba(255,0,102,1)'],
+      pool: ['rgba(52,194,182,1)', 'rgba(202,196,208,1)', 'rgba(182,241,29,1)'],
+      greenAndOrange: ['#f1081f', '#fa564d', '#77e401']
     },
     {
       neon: ['rgba(0,255,200,1)', 'rgba(255,179,0,1)', 'rgba(176,255,5,1)', 'rgba(255,0,102,1)'],
       pool: ['rgba(52,194,182,1)', 'rgba(202,196,208,1)', 'rgba(182,241,29,1)', 'rgba(5,131,156,1)'],
-      wes: ['rgba(190,168,28,1)', 'rgba(123,136,95,1)', 'rgba(83,143,105,1)', 'rgba(154,50,0,1)']
+      greenAndOrange: ['#f1081f', '#fa564d', '#77e401', '#08ad28'],
     },
     {
       neon: ['rgba(0,255,200,1)', 'rgba(255,179,0,1)', 'rgba(176,255,5,1)', 'rgba(255,0,102,1)', 'rgba(112,141,145,1)'],
       pool: ['rgba(52,194,182,1)', 'rgba(251,246,40,1)', 'rgba(202,196,208,1)', 'rgba(182,241,29,1)', 'rgba(5,131,156,1)'],
-      wes: ['rgba(190,168,28,1)', 'rgba(123,136,95,1)', 'rgba(83,143,105,1)', 'rgba(59,70,59,1)', 'rgba(154,50,0,1)']
+      greenAndOrange: ['#f1081f', '#fa564d', '#77e401', '#08ad28', '#fabc07'],
     },
   ],
   sizes: {
@@ -97,7 +101,10 @@ export default Ember.Service.extend({
     return dimensions;
   },
   getColorScheme(colors) {
-    let schemeKey = this.get('schemeKeys')[Math.floor((this.get('schemeKeys').length * Math.random()) * 1)];
+    let schemeKeys = Object.keys(this.get('colorSchemes')[0]);
+    console.log('schemeKeys is', schemeKeys);
+    // let schemeKey = this.get('schemeKeys')[Math.floor((this.get('schemeKeys').length * Math.random()) * 1)];
+    let schemeKey = schemeKeys[Math.floor((schemeKeys.length * Math.random()) * 1)];
     this.get('patternData').colorScheme = schemeKey;
     return this.get('colorSchemes')[colors - 1][schemeKey];
   },
