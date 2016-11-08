@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-// pattern-card <-- patterns
+// pattern-card <-- patterns (gallery) 
 // pattern-card <-- favorites
 // pattern-card <-- project
 
