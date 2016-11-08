@@ -10,13 +10,4 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
-
-  actions: {
-    toggleFavorite() {
-      this.sendAction('toggleFavorite', this.get('pattern'));
-    },
-    createNewProject() {
-      this.sendAction('createNewProject', this.get('pattern'));
-    }
-  }
 });

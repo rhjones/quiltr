@@ -1,5 +1,5 @@
 <div style="width: 200px;">{{#link-to 'pattern' pattern}}{{pattern-canvas pattern=pattern}}{{/link-to}}</div>
 
-{{favorite-button pattern=pattern toggleFavorite='toggleFavorite'}} 
+{{favorite-button pattern=pattern favorite=pattern.currentUserFavorite}} 
 
 {{make-button pattern=pattern createNewProject='createNewProject'}}
