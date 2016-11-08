@@ -2,7 +2,9 @@
 
 {{pattern-metadata pattern=model}}
 
-{{favorite-button pattern=model toggleFavorite='toggleFavorite'}} 
+<p>Current user favorite: {{model.currentUserFavorite}}</p>
+
+{{favorite-button pattern=model favorite=model.currentUserFavorite}} 
 {{make-button pattern=model createNewProject='createNewProject'}}
 
 {{#each model.projects as |project|}}

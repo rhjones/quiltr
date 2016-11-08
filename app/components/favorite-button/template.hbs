@@ -1,5 +1,5 @@
 {{#if isAuthenticated}}
-  {{#if isFavorite}}
+  {{#if favorite}}
     <i class="fa fa-heart" aria-hidden="true" {{ action 'toggleFavorite'}}></i>
   {{else}}
     <i class="fa fa-heart-o" aria-hidden="true" {{ action 'toggleFavorite'}}></i>
