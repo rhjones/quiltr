@@ -51,7 +51,7 @@ module.exports = function (environment) {
   if (environment === 'production') {
     ENV.locationType = 'hash';
     ENV.rootURL = '/quiltr';
-    ENV.apiHost = 'https://quiltr.herokuapp.com/';
+    ENV.apiHost = 'https://quiltr.herokuapp.com';
   }
 
   return ENV;
