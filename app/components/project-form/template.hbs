@@ -3,15 +3,19 @@
   {{input type=text id="name" value=project.name}}
 
   <label for="startDate">Date Started:</label>
-  <input type="date" id="startDate">
+  <input type="date" id="startDate" value={{formatDateForForms project.startDate}}>
 
   <label for="finishDate">Date Completed:</label>
-  <input type="date" id="finishDate">
+  <input type="date" id="finishDate" value={{formatDateForForms project.finishDate}}>
 
   <label for="finished">Project Status:</label>
   <select id="finished">
     <option value="false">In progress</option>
-    <option value="true">Completed</option>
+    {{#if project.finished}}
+      <option value="true" selected>Completed</option>
+    {{else}}
+      <option value="true">Completed</option>
+    {{/if}}
   </select>
 
   <label for="notes">Notes:</label>

@@ -13,7 +13,8 @@ Router.map(function () {
   this.route('patterns', { path: '/gallery' }, function() {});
   this.route('pattern', { path: '/patterns/:pattern_id' });
   this.route('project', { path: '/projects/:project_id' });
-  this.route('projects', function() {});
+  this.route('project.edit', { path: '/projects/:project_id/edit' });
+  this.route('projects');
   this.route('favorites');
   this.route('generate');
   this.route('newproject', { path: '/patterns/:pattern_id/newproject'});
