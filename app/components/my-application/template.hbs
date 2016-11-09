@@ -1,30 +1,25 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    {{navbar-header}}
+{{#if isAuthenticated}}
+  {{nav-bar signOut='signOut'}}
 
-    <div class="collapse navbar-collapse" id="navigation">
-      <ul class="nav navbar-nav">
-        {{#if isAuthenticated}}
-        <li>{{#link-to "users"}}Users{{/link-to}}</li>
-        {{/if}}
-        <li>{{#link-to 'patterns'}}Gallery{{/link-to}}</li>
-        <li>{{#link-to 'generate'}}Generate{{/link-to}}</li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        {{#if isAuthenticated}}
-        <li>{{#link-to "change-password"}}Change Password{{/link-to}}</li>
-        <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
-        {{else}}
-        <li>{{#link-to "sign-up"}}Sign Up{{/link-to}}</li>
-        <li>{{#link-to "sign-in"}}Sign In{{/link-to}}</li>
-        {{/if}}
-      </ul>
+  <div class="container-fluid">
+    {{#each flashMessages.queue as |flash|}}
+      {{flash-message flash=flash}}
+    {{/each}}
+
+    {{outlet}}
+
+  </div>
+{{else}}
+  <div class="welcome">
+    {{nav-bar signOut='signOut'}}
+
+    <div class="container-fluid">
+      {{#each flashMessages.queue as |flash|}}
+        {{flash-message flash=flash}}
+      {{/each}}
+
+      {{outlet}}
+
     </div>
   </div>
-</nav>
-
-{{#each flashMessages.queue as |flash|}}
-  {{flash-message flash=flash}}
-{{/each}}
-
-{{outlet}}
+{{/if}}

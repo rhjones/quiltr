@@ -1,0 +1,27 @@
+nav {
+  border-bottom: 1px solid $lightgray;
+  height: 60px;
+  padding: 5px;
+  background: $transparentwhite;
+}
+
+.navbar-brand {
+  font-family: 'Megrim';
+  text-shadow: none;
+  padding: 7px 15px 7px 0;
+  font-size: 36px;
+
+  img {
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+  }
+}
+
+.icon-bar {
+  background: $mediumgray;
+}
+
+.navbar-toggle {
+  margin-right: 0;
+}
