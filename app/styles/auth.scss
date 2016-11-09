@@ -30,3 +30,19 @@
   }
 }
 
+.pwd-form {
+  button {
+    background: $green;
+    border: 1px solid $mediumgray;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 1em;
+    color: $white;
+
+    &:hover {
+      background: $white;
+      color: $black;
+    }
+  }
+}
+
