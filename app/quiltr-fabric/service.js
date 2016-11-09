@@ -168,21 +168,106 @@ export default Ember.Service.extend({
 
     let blockKeys = Object.keys(blockTypes);
 
-    for (let i = 0; i < dimensions.rows; i++) {
-      for (let j = 0; j < dimensions.columns; j++) {
-        let blockKey = blockKeys[Math.floor((blockKeys.length * Math.random()) * 1)];
-        let blockType = blockTypes[blockKey];
-        // let block = blockType.block;
-        patternCanvas.add(blockType.block(x, y, blockType.color, patternBlockSize));
-        blockTypes[blockKey].count++;
-        x += patternBlockSize;
-      }
-      x = 0;
-      y += patternBlockSize;
-    }
+    // for (let i = 0; i < dimensions.rows; i++) {
+    //   for (let j = 0; j < dimensions.columns; j++) {
+    //     let blockKey = blockKeys[Math.floor((blockKeys.length * Math.random()) * 1)];
+    //     let blockType = blockTypes[blockKey];
+    //     // let block = blockType.block;
+    //     patternCanvas.add(blockType.block(x, y, blockType.color, patternBlockSize));
+    //     blockTypes[blockKey].count++;
+    //     x += patternBlockSize;
+    //   }
+    //   x = 0;
+    //   y += patternBlockSize;
+    // }
+
+    patternCanvas.add(this.hstTopRight(x, y, '#aafe54', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstTopRight(x, y, '#aafe54', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.square(x, y, '#00ffcd', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstBottomRight(x, y, '#ffb13d', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstTopLeft(x, y, '#6e8d90', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstBottomLeft(x, y, '#ff0065', patternBlockSize));
+    x = 0;
+    y += patternBlockSize;
+
+    patternCanvas.add(this.hstTopLeft(x, y, '#6e8d90', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.square(x, y, '#00ffcd', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstBottomLeft(x, y, '#ff0065', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstTopLeft(x, y, '#6e8d90', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstBottomRight(x, y, '#ffb13d', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstBottomLeft(x, y, '#ff0065', patternBlockSize));
+    x = 0;
+    y += patternBlockSize;
+
+    patternCanvas.add(this.hstTopLeft(x, y, '#6e8d90', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstTopLeft(x, y, '#6e8d90', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.square(x, y, '#00ffcd', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.square(x, y, '#00ffcd', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstBottomRight(x, y, '#ffb13d', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstBottomLeft(x, y, '#ff0065', patternBlockSize));
+    x = 0;
+    y += patternBlockSize;
+
+    patternCanvas.add(this.square(x, y, '#00ffcd', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstBottomLeft(x, y, '#ff0065', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstBottomRight(x, y, '#ffb13d', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstBottomRight(x, y, '#ffb13d', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.square(x, y, '#00ffcd', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstTopRight(x, y, '#aafe54', patternBlockSize));
+    x = 0;
+    y += patternBlockSize;
+
+    patternCanvas.add(this.square(x, y, '#00ffcd', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstTopRight(x, y, '#aafe54', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstBottomLeft(x, y, '#ff0065', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstBottomLeft(x, y, '#ff0065', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.square(x, y, '#00ffcd', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstTopRight(x, y, '#aafe54', patternBlockSize));
+    x = 0;
+    y += patternBlockSize;
+
+    patternCanvas.add(this.hstTopRight(x, y, '#aafe54', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstTopRight(x, y, '#aafe54', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstTopRight(x, y, '#aafe54', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.square(x, y, '#00ffcd', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.square(x, y, '#00ffcd', patternBlockSize));
+    x += patternBlockSize;
+    patternCanvas.add(this.hstBottomLeft(x, y, '#ff0065', patternBlockSize));
+    x += patternBlockSize;
+
 
     patternCanvas.renderAll();
 
     this.get('patternData').svg = patternCanvas.toSVG();
+    console.log(this.get('patternData'));
   },
 });
