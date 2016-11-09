@@ -16,6 +16,8 @@ Quiltr is built in Ember and relies on a Rails API/Postgres to persist data. Cod
 
 ## Project Planning
 
+[Pitch Deck](https://docs.google.com/presentation/d/1_x60v_O56g49k7vBix-rbFNC4JuevlIhEjBSj2j6ENg/edit?usp=sharing)
+
 ### User Stories
 
 - I want to view randomly generated patterns for quilts based on the following variables: quilt size, block size, # of colors.
@@ -60,8 +62,26 @@ Install build dependencies with `npm install`. Install runtime dependencies with
 -   [ember.js](http://emberjs.com/)
 -   [ember-cli](http://www.ember-cli.com/)
 -   [Bootstrap](http://getbootstrap.com)
--   [fabric.js](https://github.com/kangax/fabric.js)
--   [moment.js](http://momentjs.com/)
+-   [fabric.js](https://github.com/kangax/fabric.js) for quilt pattern generation and SVG manipulation
+-   [moment.js](http://momentjs.com/) for date formatting
+
+## Additional Tech Used
+
+See [rhjones/quiltr-api](https://github.com/rhjones/quiltr-api) for installation instructions.
+
+- [ImageMagick](http://www.imagemagick.org/) (for image handling via Paperclip)
+- [paperclip](https://github.com/thoughtbot/paperclip) (for image uploading through Rails to S3)
+
+## Next Steps
+
+- Build functionality to sort the pattern gallery by quilt size, block size, color scheme, and number of colors
+- Include block counts for each type/color, fabric amounts for each color, and more detailed piecing and quilting instructions
+- Add ability to expand/minimize photos, perhaps including a full-size gallery component
+- Enable users to choose their own colors
+- Use Ember controllers to enable redirection from certain routes to sign in & back to those routes automatically
+- Integrate Pinterest, including S3 uploads of PNG versions of patterns (the API can handle this; it's just a matter of building the front end functionality)
+- Add "counts" of projects & favorites so a user can see how many other users have favorited or made a pattern
+- Implement pagination on galleries, favorites, and my-projects views
 
 ## [License](LICENSE)
 
