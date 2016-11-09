@@ -5,10 +5,10 @@ export default Ember.Service.extend({
   patternData: {},
   colorSchemes: [
     {
-      neon: ['rgba(112,141,145,1)'],
+      neon: ['rgba(255,0,102,1)'],
       pool: ['rgba(5,131,156,1)'],
-      papaya: ['#e24e42'],
-      purple: ['#452445'],
+      papaya: ['#01744d'],
+      purple: ['#7e4264'],
     },
     {
       neon: ['rgba(0,255,200,1)', 'rgba(176,255,5,1)'],

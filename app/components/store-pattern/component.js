@@ -3,7 +3,7 @@ import Ember from 'ember';
 // store-pattern <-- generate
 
 export default Ember.Component.extend({
-  classNames: ['store-pattern'],
+  tagName: 'span',
   auth: Ember.inject.service(),
   isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
   quiltrFabric: Ember.inject.service(),

@@ -11,7 +11,7 @@ h5,
 h6 {
   font-family: $bodyfont, sans-serif;
   font-variant: small-caps;
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
 }
 
 .main {
@@ -37,10 +37,6 @@ h6 {
   min-width: 300px;
   margin: 0 auto;
   text-align: center;
-}
-
-.store-pattern {
-  display: none;
 }
 
 .project-notes {
