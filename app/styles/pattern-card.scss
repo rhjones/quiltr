@@ -1,0 +1,39 @@
+.pattern-card {
+  background: $lightgray;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  padding: 10px;
+
+  .pattern-svg {
+    height: 200px;
+    line-height: 200px;
+    margin: 0 auto 10px;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.pattern-svg {
+  background: $white;
+
+  svg {
+    height: 100%;
+    width: 40%;
+  }
+}
+
+.pattern-card-buttons {
+  text-align: right;
+
+  a,
+  a:focus,
+  a:active,
+  a:visited {
+    color: $fontcolor;
+  }
+
+  a:hover {
+    color: $hotpink;
+  }
+}

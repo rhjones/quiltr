@@ -1,11 +1,28 @@
-<div>
+<div class="pattern-card">
   {{#link-to 'pattern' pattern}}
-  <div class="pattern-svg">
-    {{{pattern.svg}}}
-  </div>
+    <div class="pattern-card-svg">
+      <div class="pattern-svg">
+        {{{pattern.svg}}}
+      </div>
+    </div>
   {{/link-to}}
+  <div class="card-caption">
+    <p>
+      {{pattern.quiltSize}} | 
+      {{pattern.colors}} color{{plural}} | 
+      {{pattern.blockSize}}" blocks
+    </p>
+
+    <p class="pattern-card-buttons">
+      {{favorite-button pattern=pattern favorite=pattern.currentUserFavorite}} 
+
+      {{make-button pattern=pattern}}
+    </p>
+  </div>
 </div>
 
-{{favorite-button pattern=pattern favorite=pattern.currentUserFavorite}} 
 
-{{make-button pattern=pattern}}
+
+
+
+

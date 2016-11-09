@@ -1,36 +1,32 @@
 .project-card {
   background: $lightgray;
+  border-radius: 4px;
   margin-bottom: 15px;
   padding: 10px;
 }
 
-.project-card-photo {
-  // applied to single photo upload image inside of .project-card
-}
-
 .card-missing-image {
-  color: #666;
+  color: $darkgray;
   font-size: 150px;
-  vertical-align: center;
   line-height: 200px;
+  vertical-align: center;
 }
 
 .card-square-image {
-  text-align: center;
-  margin: 0 auto;
-  width: 100%;
   height: 200px;
   line-height: 200px;
+  margin: 0 auto 10px;
   overflow: hidden;
-  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
 }
 
 .card-caption {
-  height: 4 * $fontsize;
-  display: table;
   background: $white;
-  width: 100%;
+  display: table;
+  height: 6 * $fontsize;
   padding: 10px;
+  width: 100%;
 
   // vertical centering of text
   // http://vanseodesign.com/css/vertical-centering/
@@ -39,13 +35,3 @@
     vertical-align: middle;
   }
 }
-
-// responsive square div
-// https://spin.atomicobject.com/2015/07/14/css-responsive-square/
-// .card-square-image:after {
-//   content: "";
-//   display: block;
-//   padding-bottom: 100%;
-// }
-
-

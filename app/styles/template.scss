@@ -11,3 +11,11 @@ h5,
 h6 {
   font-family: 'Megrim', sans-serif;
 }
+
+.is-favorite {
+  color: $hotpink;
+}
+
+.fa-heart-o:hover:before {
+  color: $hotpink;
+}

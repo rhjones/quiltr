@@ -6,10 +6,12 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
+  tagName: 'span',
   auth: Ember.inject.service(),
   store: Ember.inject.service(),
   tagName: 'span',
   classNameBindings: ['isFavorite'],
+  isFavorite: Ember.computed.bool('pattern.currentUserFavorite'),
   isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
   actions: {
     toggleFavorite() {

@@ -8,6 +8,7 @@
 @import 'nav';
 @import 'auth';
 
+@import 'pattern-card';
 @import 'project-card';
 @import 'generate';
 
@@ -17,13 +18,6 @@
 
 .project-notes {
   white-space: pre-wrap;
-}
-
-.pattern-svg {
-  svg {
-    height: 100%;
-    width: 100%;
-  }
 }
 
 .welcome {

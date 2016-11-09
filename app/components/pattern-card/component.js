@@ -10,4 +10,7 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
+  plural: Ember.computed('pattern.colors', function() {
+    return this.get('pattern.colors') > 1 ? 's' : '';
+  })
 });

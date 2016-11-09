@@ -5,8 +5,5 @@
   <p>Why don't you check out the {{#link-to 'patterns'}}gallery{{/link-to}} or take a spin with the {{#link-to 'generate'}}pattern generator{{/link-to}}?</p>
 {{/unless}}
 {{#each model as |favorite|}}
-    <p>Pattern id: {{favorite.pattern.id}}</p>
-    <p>Pattern quiltSize: {{favorite.pattern.quiltSize}}</p>
-    <p>Pattern colors: {{favorite.pattern.colors}}</p>
-    {{pattern-card pattern=favorite.pattern}}
+  {{pattern-card pattern=favorite.pattern class="col-sm-4 col-md-3"}}
 {{/each}}
