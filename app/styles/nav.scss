@@ -1,12 +1,11 @@
 nav {
-  border-bottom: 1px solid $lightgray;
   height: 60px;
   padding: 0 0 0 5px;
-  background: $transparentblack;
+  background: $aqua;
   color: $white;
 
   &.welcome-nav {
-    background: $hotpink;
+    background: $transparentblack;
   }
 
   a,
