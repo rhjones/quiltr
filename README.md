@@ -6,6 +6,8 @@ Create patterns. Make quilts. Be inspired.
 - Live API: [Quiltr API](https://quiltr.herokuapp.com/)
 - API repo on GitHub: [rhjones/quiltr-api](https://github.com/rhjones/quiltr-api)
 
+!![Screenshot of Quiltr](https://github.com/rhjones/quiltr/blob/master/readme-img/quiltr.png)
+
 ## About Quiltr
 
 [Quiltr](https://rhjones.github.io/quiltr/) lets users generate random geometric quilt patterns in a range of sizes and color schemes. Users can save patterns to their "favorites" and browse a gallery of all patterns on the site. Users can also create projects based on these patterns and share their notes about and photos of each project.
