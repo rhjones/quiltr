@@ -3,6 +3,8 @@ nav {
   color: $white;
   height: 60px;
   padding: 0 0 0 5px;
+  position: relative;
+  z-index: 1000;
 
   a,
   a:hover,
@@ -12,7 +14,7 @@ nav {
 
   .active {
     background: $white;
-    color: $black;
+    color: $green;
   }
 
   .navbar-brand.active {
@@ -25,13 +27,14 @@ nav {
   .dropdown-toggle:hover {
     background-color: none;
     border-color: none;
-    margin-right: 15px;
   }
 }
 
 .navbar-collapse {
   border-top: 0;
   box-shadow: none;
+  background: $green;
+  margin-left: -15px;
 }
 
 .nav {
@@ -44,7 +47,7 @@ nav {
     >a:hover,
     >a:focus {
       background-color: $white;
-      color: $black;
+      color: $green;
     }
   }
 }
