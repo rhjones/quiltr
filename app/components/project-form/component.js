@@ -9,6 +9,7 @@ export default Ember.Component.extend({
     name: null,
     notes: null,
   },
+  classNames: ['project-form'],
   // didInsertElement() {
   //   // use jQuery UI datepicker in browsers that don't handle HTML5 date inputs 
   //   let testInput = document.createElement('input');

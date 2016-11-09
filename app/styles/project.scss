@@ -105,3 +105,14 @@
     display: inline-block;
   }
 }
+
+.project-form {
+  min-width: 280px;
+  width: 50%;
+  text-align: left;
+  form {
+    label {
+      display: block;
+    }
+  }
+}

@@ -1,24 +1,32 @@
 <form {{action 'saveProject' on='submit'}}>
-  <label for="name">Project Name*</label>
-  {{input type=text id="name" value=project.name}}
+  <div class="form-group">
+    <label for="name">Project Name*</label>
+    {{input type=text id="name" value=project.name}}
+  </div>
 
-  <label for="startDate">Date Started:</label>
-  <input type="date" id="startDate" value={{formatDateForForms project.startDate}}>
+  <div class="form-group">
+    <label for="startDate">Date Started</label>
+    <input type="date" id="startDate" value={{formatDateForForms project.startDate}}>
+  </div>
   
-  <label for="finishDate">Date Completed:</label>
-  <input type="date" id="finishDate" value={{formatDateForForms project.finishDate}}>
+  <div class="form-group">
+    <label for="finishDate">Date Completed</label>
+    <input type="date" id="finishDate" value={{formatDateForForms project.finishDate}}>
+  </div>
 
-  <label for="finished">Project Status:</label>
-  <select id="finished">
-    <option value="false">In progress</option>
-    {{#if project.finished}}
-      <option value="true" selected>Completed</option>
-    {{else}}
-      <option value="true">Completed</option>
-    {{/if}}
-  </select>
+  <div class="form-group">
+    <label for="finished">Project Status</label>
+    <select id="finished">
+      <option value="false">In progress</option>
+      {{#if project.finished}}
+        <option value="true" selected>Completed</option>
+      {{else}}
+        <option value="true">Completed</option>
+      {{/if}}
+    </select>
+  </div>
 
-  <label for="notes">Notes:</label>
+  <label for="notes">Project Notes</label>
   {{textarea value=project.notes cols="80" rows="6"}}
 
   <input class="btn btn-default" type="submit" id="submit" value="Submit">

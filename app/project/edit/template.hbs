@@ -1,7 +1,11 @@
-<h1>edit project</h1>
+<div class="col-md-9">
+  <h2>Editing {{model.name}}</h2>
 
-{{project-form updateProject='updateProject' pattern=model.pattern project=model}}
+  {{project-form updateProject='updateProject' pattern=model.pattern project=model}}
+</div>
 
-<h2>Pattern</h2>
-{{pattern-card pattern=model.pattern}}
+<div class="col-md-3">
+  <h2>Original Pattern</h2>
+  {{pattern-card pattern=model.pattern}}
+</div>
 

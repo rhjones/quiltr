@@ -1,8 +1,10 @@
-<h1>Create new project</h1>
+<div class="col-md-9">
+  <h2>New project</h2>
 
-<h2>New project</h2>
+  {{project-form storeNewProject='storeNewProject' pattern=model}}
+</div>
 
-{{project-form storeNewProject='storeNewProject' pattern=model}}
-
-<h2>Pattern</h2>
-{{pattern-card pattern=model}}
+<div class="col-md-3">
+  <h2>Pattern</h2>
+  {{pattern-card pattern=model}}
+</div>
