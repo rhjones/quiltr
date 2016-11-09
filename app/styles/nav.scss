@@ -30,6 +30,15 @@ nav {
   }
 }
 
+.dropdown-menu {
+  .username {
+    color: $green;
+    padding: 3px 20px;
+    text-transform: uppercase;
+
+  }
+}
+
 .navbar-collapse {
   border-top: 0;
   box-shadow: none;
