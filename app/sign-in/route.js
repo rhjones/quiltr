@@ -23,6 +23,10 @@ export default Ember.Route.extend({
       //     this.transitionTo('application');
       //   }
       // })
+      .then(() => {
+        Ember.$('#app-wrapper').removeClass('welcome');
+        Ember.$('nav').removeClass('welcome-nav');
+      })
       .then(() => this.transitionTo('application'))
       .then(() => this.get('flashMessages').success('Thanks for signing in!'))
       .catch(() => {
