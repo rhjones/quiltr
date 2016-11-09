@@ -1,0 +1,30 @@
+.auth-form {
+  margin: 70px auto;
+  max-width: 300px;
+  text-align: center;
+
+  h1 {
+    color: $white;
+    font-weight: bold;
+    font-size: 72px;
+  }
+
+  label {
+    display: none;
+  }
+
+  button {
+    background: $transparentblack;
+    border: 1px solid $white;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 1em;
+    color: $white;
+
+    &:hover {
+      background: $white;
+      color: $black;
+    }
+  }
+}
+
