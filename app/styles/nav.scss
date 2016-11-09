@@ -1,8 +1,8 @@
 nav {
-  height: 60px;
-  padding: 0 0 0 5px;
   background: $aqua;
   color: $white;
+  height: 60px;
+  padding: 0 0 0 5px;
 
   &.welcome-nav {
     background: $transparentblack;
@@ -13,26 +13,58 @@ nav {
   a:focus {
     color: $white;
   }
+
+  .dropdown-toggle,
+  .dropdown-toggle:focus,
+  .dropdown-toggle:hover {
+    background-color: none;
+    border-color: none;
+    margin-right: 15px;
+  }
+}
+
+.navbar-collapse {
+  border-top: 0;
+  box-shadow: none;
 }
 
 .nav {
-  &>li {
-    &>a {
-      padding-top: 20px;
+  >li {
+    >a {
       padding-bottom: 20px;
+      padding-top: 20px;
     }
-    &>a:hover,
-    &>a:focus {
+
+    >a:hover,
+    >a:focus {
       background-color: $white;
       color: $black;
     }
   }
 }
 
+
+
+.navbar-right {
+  >li {
+    >a {
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+    
+    >a:hover,
+    >a:focus {
+      background-color: none;
+      color: $black;
+    }
+  }
+}
+
+
 .navbar-brand,
 .navbar-nav {
-  &>li {
-    &>a {
+  >li {
+    >a {
       text-shadow: none;
     }
   }
@@ -40,14 +72,14 @@ nav {
 
 .navbar-brand {
   font-family: 'Megrim';
-  text-shadow: none;
-  padding: 12px 15px 12px 0;
   font-size: 36px;
+  padding: 12px 15px 12px 0;
+  text-shadow: none;
 
   img {
-    width: 36px;
-    height: 36px;
     display: inline-block;
+    height: 36px;
+    width: 36px;
   }
 }
 

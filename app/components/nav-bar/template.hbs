@@ -3,13 +3,33 @@
 
   <div class="collapse navbar-collapse" id="navigation">
     <ul class="nav navbar-nav">
-      <li>{{#link-to 'patterns'}}Gallery{{/link-to}}</li>
-      <li>{{#link-to 'generate'}}Generate{{/link-to}}</li>
+      <li>{{#link-to 'patterns'}}Patterns{{/link-to}}</li>
+      <li>{{#link-to 'projects'}}Projects{{/link-to}}</li>
+      <li>{{#link-to 'generate'}}Create A Pattern{{/link-to}}</li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       {{#if isAuthenticated}}
-        <li>{{#link-to "change-password"}}Change Password{{/link-to}}</li>
-        <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
+        <li>
+          {{#link-to 'my-projects'}}
+            <i class="fa fa-scissors" aria-hidden="true"></i>
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to 'favorites'}}
+            <i class="fa fa-heart" aria-hidden="true"></i>
+          {{/link-to}}
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>{{#link-to "change-password"}}Change Password{{/link-to}}</li>
+            <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
+          </ul>
+        </li>
+       
       {{else}}
         <li>{{#link-to "sign-up"}}Sign Up{{/link-to}}</li>
         <li>{{#link-to "sign-in"}}Sign In{{/link-to}}</li>
