@@ -10,6 +10,11 @@ export default Ember.Component.extend({
     Ember.$('nav').addClass('welcome-nav');
   },
 
+  willDestroyElement() {
+    Ember.$('#app-wrapper').removeClass('welcome');
+    Ember.$('nav').removeClass('welcome-nav');
+  },
+
   actions: {
     submit () {
       this.sendAction('submit', this.get('credentials'));

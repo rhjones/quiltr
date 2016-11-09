@@ -12,10 +12,6 @@ export default Ember.Route.extend({
     signUp (credentials) {
       this.get('auth').signUp(credentials)
       .then(() => this.get('auth').signIn(credentials))
-      .then(() => {
-        Ember.$('#app-wrapper').removeClass('welcome');
-        Ember.$('nav').removeClass('welcome-nav');
-      })
       .then(() => this.transitionTo('application'))
       .then(() => {
         this.get('flashMessages')
