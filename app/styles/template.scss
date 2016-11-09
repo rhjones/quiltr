@@ -10,7 +10,7 @@ h4,
 h5,
 h6 {
   font-family: $bodyfont, sans-serif;
-  font-variant: small-caps;
+  // font-variant: small-caps;
   // padding-bottom: 20px;
 }
 
@@ -37,10 +37,6 @@ h6 {
   min-width: 300px;
   margin: 0 auto;
   text-align: center;
-}
-
-.project-notes {
-  white-space: pre-wrap;
 }
 
 .welcome {

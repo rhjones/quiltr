@@ -1,0 +1,107 @@
+.project-card {
+  background: $lightgray;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.project-photo-card {
+  background: $lightgray;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  padding: 10px;
+  text-align: center;
+
+  .project-photo-card-thumbnail {
+    height: 200px;
+    line-height: 200px;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.card-missing-image {
+  color: $darkgray;
+  font-size: 150px;
+  line-height: 200px;
+  vertical-align: center;
+}
+
+.card-square-image {
+  height: 200px;
+  line-height: 200px;
+  margin: 0 auto 10px;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+}
+
+.card-caption {
+  background: $white;
+  display: table;
+  height: 6 * $fontsize;
+  padding: 10px;
+  width: 100%;
+
+  // vertical centering of text
+  // http://vanseodesign.com/css/vertical-centering/
+  p {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.delete-button {
+  color: $orange;
+
+  &:hover::before,
+  i:hover::before {
+    color: $red;
+  }
+}
+
+.project-meta.meta {
+  margin-top: 63px;
+  text-align: left;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.project-notes.meta {
+  text-align: left;
+
+  h3 {
+    margin-top: 10px;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.whitespace-prewrap {
+  white-space: pre-wrap;
+}
+
+.photo-upload-meta.meta {
+  text-align: left;
+
+  h3 {
+    margin-top: 10px;
+  }
+
+  label {
+    display: none;
+  }
+
+  input {
+    display: inline-block;
+  }
+}

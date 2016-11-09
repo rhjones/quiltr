@@ -1,33 +1,49 @@
-{{#if (currentUser model.user.id)}}
-  {{project-delete-button project=model deleteProject='deleteProject'}}
-  {{project-edit-button project=model editProject='editProject'}}
-{{/if}}
+<div class="col-md-9">
+  <h2>
+    {{model.name}} 
+    <small>
+      made by {{model.user.username}}
+      {{#if (currentUser model.user.id)}}
+        {{project-delete-button project=model deleteProject='deleteProject'}}
+        {{project-edit-button project=model editProject='editProject'}}
+      {{/if}}
+    </small>
+  </h2>
 
-<p>Project name: {{model.name}}</p>
-<p>Made by: {{model.user.username}}</p>
-{{#if model.startDate}}
-  <p>Date started: {{formatDate model.startDate}}</p>
-{{/if}}
-
-{{#if model.finishedDate}}
-  <p>Date finished: {{model.finishedDate}}</p>
-{{/if}}
+  {{#if model.notes}}
+    <div class="meta project-notes">
+      <h3>Notes</h3>
+      <span class="whitespace-prewrap">{{model.notes}}</span>
+    </div>
+  {{/if}}
 
 
-<p>Project status: {{#if model.finished}}Finished{{else}}In progress{{/if}}</p>
-{{#if model.notes}}
-  <p class="project-notes">Notes: {{model.notes}}</p>
-{{/if}}
 
-{{#each model.projectUploads as |photo|}}
-  {{project-photo photo=photo project=model removePhoto='removePhoto'}}
-{{/each}}
+  {{#if (currentUser model.user.id)}}
+    {{project-upload-form project=model uploadPhoto='uploadPhoto'}}
+  {{/if}}
 
-{{#if (currentUser model.user.id)}}
-  {{project-upload-form project=model uploadPhoto='uploadPhoto'}}
-{{/if}}
+  <div class="row">
+    {{#each model.projectUploads as |photo|}}
+      {{project-photo photo=photo project=model removePhoto='removePhoto' class="col-md-4"}}
+    {{/each}}
+  </div>
 
-<p>Pattern: {{model.pattern.id}}</p>
-{{pattern-card pattern=model.pattern}}
+</div>
+
+
+<div class="col-md-3">
+  <div class="meta project-meta">
+    <p>Project status: {{#if model.finished}}Finished{{else}}In progress{{/if}}</p>
+    {{#if model.startDate}}
+      <p>Started: {{formatDate model.startDate}}</p>
+    {{/if}}
+    <p>Finished: {{#if model.finishedDate}}{{model.finishedDate}}{{else}}In progress{{/if}}</p>
+  </div>
+  <h2>Original Pattern</h2>
+  {{pattern-card pattern=model.pattern}}
+</div>
+
+
 
 

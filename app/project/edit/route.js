@@ -16,7 +16,7 @@ export default Ember.Route.extend({
     return this.get('store').findRecord('project', params.project_id);
   },
   afterModel(model) {
-    if (parseInt(this.get('auth.credentials.token'), 10) !== parseInt(model.get('user.id'), 10)) {
+    if (parseInt(this.get('auth.credentials.id'), 10) !== parseInt(model.get('user.id'), 10)) {
       this.transitionTo('projects')
       .then(() => {
         this.get('flashMessages')

@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 // project-upload <-- project
 export default Ember.Component.extend({
+  classNames: ['meta', 'photo-upload-meta'],
   actions: {
     uploadPhoto() {
       console.log('submitted form to upload photo');

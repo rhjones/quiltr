@@ -1,11 +1,7 @@
+<h3>Upload photo</h3>
 <form enctype="multipart/form-data" id="project-upload-form" {{ action 'uploadPhoto' on='submit' }}>
-  <fieldset>
-    <legend>Upload Photo</legend>
-    <label>
-      Upload
-      <input type="file" name="project_upload[photo]">
-    </label>
-    <input type="hidden" name="project_upload[project_id]" value="{{project.id}}">
-    <input type="submit" name="submit" value="Upload">
-  </fieldset>
+  <label>Photo Upload</label>
+  <input type="file" name="project_upload[photo]">
+  <input type="hidden" name="project_upload[project_id]" value="{{project.id}}">
+  <input type="submit" name="submit" value="Upload">
 </form>

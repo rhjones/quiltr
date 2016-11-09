@@ -1,6 +1,11 @@
-<img src="{{photo.photoUrl}}" alt="{{project.name}}">
+<div class="project-photo-card">
+  <div class="project-photo-card-thumbnail">
+    <img src="{{photo.photoUrl}}" alt="{{project.name}}">
+  </div>
 
-{{#if (currentUser project.user.id)}}
-  <button {{action 'removePhoto'}}>Delete</button>
-{{/if}}
+  {{#if (currentUser project.user.id)}}
+    <i class="fa fa-trash-o delete-button photo-delete-button" aria-hidden="true" {{action 'removePhoto'}} title="Delete photo"></i>
+  {{/if}}
+
+</div>
 
