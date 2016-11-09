@@ -137,6 +137,7 @@ export default Ember.Service.extend({
 
     // set up canvas & patternBlockSize
     let patternCanvas = new fabric.StaticCanvas('canvas');
+    patternCanvas.renderOnAddRemove = false;
     let container = Ember.$('.canvas-container');
     let canvasWidth = container.width();
     let patternBlockSize = canvasWidth / dimensions.columns; 
@@ -194,6 +195,8 @@ export default Ember.Service.extend({
       x = 0;
       y += patternBlockSize;
     }
+
+    patternCanvas.renderAll();
 
     this.get('patternData').svg = patternCanvas.toSVG();
   },
