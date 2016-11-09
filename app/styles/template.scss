@@ -1,5 +1,5 @@
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: $bodyfont, sans-serif;
   font-size: 16px;
 }
 
@@ -9,7 +9,19 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Megrim', sans-serif;
+  font-family: $bodyfont, sans-serif;
+  font-variant: small-caps;
+  padding-bottom: 20px;
+}
+
+.main {
+  a {
+    color: $green;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .is-favorite {
@@ -18,4 +30,25 @@ h6 {
 
 .fa-heart-o:hover:before {
   color: $hotpink;
+}
+
+.faq{
+  width: 50%;
+  min-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.store-pattern {
+  display: none;
+}
+
+.project-notes {
+  white-space: pre-wrap;
+}
+
+.welcome {
+  background: url('img/quiltr-cover.jpg') no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }

@@ -1,7 +1,7 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
 @import url(https://use.fontawesome.com/e2e98f39a3.css);
-@import url(https://fonts.googleapis.com/css?family=Raleway|Megrim);
+@import url(https://fonts.googleapis.com/css?family=Quicksand|Pacifico);
 
 @import 'variables';
 @import 'template';
@@ -11,18 +11,4 @@
 @import 'pattern-card';
 @import 'project-card';
 @import 'generate';
-
-.store-pattern {
-  display: none;
-}
-
-.project-notes {
-  white-space: pre-wrap;
-}
-
-.welcome {
-  background: url('img/quiltr-cover.jpg') no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-}
 

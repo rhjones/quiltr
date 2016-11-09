@@ -4,8 +4,9 @@
   text-align: center;
 
   h1 {
+    font-family: $brandfont;
+    font-variant: normal;
     color: $white;
-    font-weight: bold;
     font-size: 72px;
   }
 
@@ -14,7 +15,7 @@
   }
 
   button {
-    background: $transparentblack;
+    background: $transparentgreen;
     border: 1px solid $white;
     border-radius: 10px;
     display: inline-block;

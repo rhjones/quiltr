@@ -3,12 +3,19 @@ $mediumgray: #ddd;
 $darkgray: #999;
 $white: #fff;
 $black: #000;
-$transparentwhite: rgba(255, 255, 255, .5);
-$transparentblack: rgba(0, 0, 0, .5);
+$hotpink: #f51d83;
+$green: #00996a;
+
 $fontcolor: #333;
 
-$hotpink: #f51d83;
+$transparentwhite: rgba($white, .5);
+$transparentblack: rgba($black, .5);
+$transparentgreen: rgba($green, .5);
 
-$aqua: rgb(5,131,156);
+
+
+
 
 $fontsize: 16px;
+$brandfont: 'Pacifico';
+$bodyfont: 'Quicksand';

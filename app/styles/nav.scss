@@ -1,16 +1,22 @@
 nav {
-  background: $aqua;
+  background: $green;
   color: $white;
   height: 60px;
   padding: 0 0 0 5px;
 
-  &.welcome-nav {
-    background: $transparentblack;
-  }
-
   a,
   a:hover,
   a:focus {
+    color: $white;
+  }
+
+  .active {
+    background: $white;
+    color: $black;
+  }
+
+  .navbar-brand.active {
+    background: transparent;
     color: $white;
   }
 
@@ -71,7 +77,7 @@ nav {
 }
 
 .navbar-brand {
-  font-family: 'Megrim';
+  font-family: $brandfont;
   font-size: 36px;
   padding: 12px 15px 12px 0;
   text-shadow: none;
