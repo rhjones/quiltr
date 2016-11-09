@@ -1,5 +1,4 @@
 import Ember from 'ember';
-/*global fabric*/
 
 // pattern-canvas <-- generate
 // pattern-canvas <-- pattern

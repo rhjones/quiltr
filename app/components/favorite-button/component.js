@@ -9,7 +9,6 @@ export default Ember.Component.extend({
   tagName: 'span',
   auth: Ember.inject.service(),
   store: Ember.inject.service(),
-  tagName: 'span',
   classNameBindings: ['isFavorite'],
   isFavorite: Ember.computed.bool('pattern.currentUserFavorite'),
   isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
@@ -21,6 +20,7 @@ export default Ember.Component.extend({
         .catch(() => {
           this.get('flashMessages').danger('There was an error. Please try again.');
         })
+        ;
       }
       else {
         let favorite = this.get('store').createRecord('favorite', {
@@ -30,6 +30,7 @@ export default Ember.Component.extend({
         .catch(() => {
           this.get('flashMessages').danger('There was an error. Please try again.');
         })
+        ;
       }
     }
   }

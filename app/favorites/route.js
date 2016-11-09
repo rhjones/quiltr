@@ -10,6 +10,7 @@ export default Ember.Route.extend({
         this.get('flashMessages')
         .warning('You must sign in to access that page.');
       })
+      ;
     }
   },
   model() {

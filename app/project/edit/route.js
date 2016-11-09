@@ -10,6 +10,7 @@ export default Ember.Route.extend({
         this.get('flashMessages')
         .warning('You must sign in to access that page.');
       })
+      ;
     }
   },
   model (params) {
@@ -22,6 +23,7 @@ export default Ember.Route.extend({
         this.get('flashMessages')
         .warning('You can only edit projects you created.');
       })
+      ;
     }
     return Ember.RSVP.hash({
       projectUploads: model.get('projectUploads'),
