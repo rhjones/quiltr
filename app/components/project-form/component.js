@@ -40,7 +40,6 @@ export default Ember.Component.extend({
           notes: this.get('project.notes'),
           pattern: this.get('pattern'),
         };
-        console.log(newProject);
         this.sendAction('storeNewProject', newProject);
       }
       

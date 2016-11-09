@@ -15,7 +15,6 @@ export default Ember.Route.extend({
       // .then(() => {
       //   let previousTransition = this.get('previousTransition');
       //   if (previousTransition) {
-      //     console.log('previous transition before sign-in!');
       //     this.set('previousTransition', null);
       //     previousTransition.retry();
       //   } 

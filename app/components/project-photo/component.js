@@ -4,7 +4,6 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     removePhoto() {
-      console.log('clicked delete');
       this.sendAction('removePhoto', this.get('photo'));
     }
   }

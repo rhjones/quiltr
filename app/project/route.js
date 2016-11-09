@@ -19,16 +19,11 @@ export default Ember.Route.extend({
   },
   actions: {
     uploadPhoto(data) {
-      console.log('inside project/route');
-      console.log(data.get('project_upload[photo]'));
-      console.log('project id', data.get('project_upload[project_id]'));
       return this.get('uploads').saveUpload(data, '/project_uploads')
        .then(() => this.refresh()) 
        .catch((error) => console.error(error));
     },
     removePhoto(photo) {
-      console.log('inside of project/route');
-      console.log(photo);
       let currentPhoto = photo;
         currentPhoto.deleteRecord();
         currentPhoto.save()
@@ -37,8 +32,6 @@ export default Ember.Route.extend({
         });
     },
     deleteProject(project) {
-      console.log('deleting project');
-      console.log(project);
       project.deleteRecord();
       project.save()
       .then(() => this.transitionTo('projects'))

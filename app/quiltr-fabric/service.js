@@ -91,8 +91,6 @@ export default Ember.Service.extend({
     return path;
   },
   calculateDimensions(quiltSize, blockSize) {
-    console.log('inside calculate dimensions');
-    console.log('quiltWidth', this.get('sizes')[quiltSize].width);
     let quiltWidth = this.get('sizes')[quiltSize].width;
     let quiltHeight = this.get('sizes')[quiltSize].height;
     let columns = quiltWidth / blockSize;
@@ -107,8 +105,6 @@ export default Ember.Service.extend({
   },
   getColorScheme(colors) {
     let schemeKeys = Object.keys(this.get('colorSchemes')[0]);
-    console.log('schemeKeys is', schemeKeys);
-    // let schemeKey = this.get('schemeKeys')[Math.floor((this.get('schemeKeys').length * Math.random()) * 1)];
     let schemeKey = schemeKeys[Math.floor((schemeKeys.length * Math.random()) * 1)];
     this.get('patternData').colorScheme = schemeKey;
     return this.get('colorSchemes')[colors - 1][schemeKey];
@@ -117,28 +113,15 @@ export default Ember.Service.extend({
     let quiltSize = Ember.$("input:radio[name='quiltSize']:checked").val();
     let colors = Ember.$("input:radio[name='colors']:checked").val();
     let blockSize = Ember.$("input:radio[name='blockSize']:checked").val();
-    console.log('quiltSize', quiltSize);
-    console.log('colors', colors);
-    console.log('blockSize', blockSize);
 
     this.prepForDrawing(quiltSize, colors, blockSize);
   },
   prepForDrawing(quiltSize, colors, blockSize) {
-    console.log('patternData is', this.get('patternData'));
     this.get('patternData').quiltSize = quiltSize;
     this.get('patternData').colors = colors;
     this.get('patternData').blockSize = blockSize;
     let dimensions = this.calculateDimensions(quiltSize, blockSize);
     let colorScheme = this.getColorScheme(colors);
-
-    console.log('patternData is', this.get('patternData'));
-
-    console.log('inside drawPattern');
-    console.log('quiltWidth', dimensions.quiltWidth);
-    console.log('quiltHeight', dimensions.quiltHeight);
-    console.log('columns', dimensions.columns);
-    console.log('rows', dimensions.rows);
-    console.log('colorScheme is', colorScheme);
 
     // set up canvas & patternBlockSize
     let patternCanvas = new fabric.StaticCanvas('canvas');
@@ -152,8 +135,6 @@ export default Ember.Service.extend({
     this.drawPattern(patternCanvas, dimensions, colorScheme, patternBlockSize);
   },
   drawPattern(patternCanvas, dimensions, colorScheme, patternBlockSize) {
-    console.log('drawing pattern!');
-    console.log('colorScheme', colorScheme);
     let x = 0;
     let y = 0;
 
@@ -186,7 +167,6 @@ export default Ember.Service.extend({
     };
 
     let blockKeys = Object.keys(blockTypes);
-    console.log(blockKeys);
 
     for (let i = 0; i < dimensions.rows; i++) {
       for (let j = 0; j < dimensions.columns; j++) {
