@@ -6,7 +6,7 @@ Create patterns. Make quilts. Be inspired.
 - Live API: [Quiltr API](https://quiltr.herokuapp.com/)
 - API repo on GitHub: [rhjones/quiltr-api](https://github.com/rhjones/quiltr-api)
 
-!![Screenshot of Quiltr](https://github.com/rhjones/quiltr/blob/master/readme-img/quiltr.png)
+![Screenshot of Quiltr](https://github.com/rhjones/quiltr/blob/master/readme-img/quiltr.png)
 
 ## About Quiltr
 
