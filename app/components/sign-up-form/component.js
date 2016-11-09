@@ -6,11 +6,11 @@ export default Ember.Component.extend({
   credentials: {},
 
   didInsertElement() {
-    this.$().parents('#app-wrapper').addClass('welcome');
+    this.$().parents('.main').addClass('welcome');
   },
 
   willDestroyElement() {
-    Ember.$('#app-wrapper').removeClass('welcome');
+    Ember.$('.main').removeClass('welcome');
   },
 
   actions: {

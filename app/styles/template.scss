@@ -44,3 +44,31 @@ h6 {
   background-size: cover;
   min-height: 100vh;
 }
+
+.home-page-row {
+}
+
+.home-page {
+  text-align: center;
+}
+
+.home-prompt {
+  background: $white;
+  border-radius: 4px;
+  margin: 50px auto 15px;
+  padding: 10px;
+  min-width: 300px;
+  width: 80%;
+
+  .home-prompt-img {
+    height: 300px;
+    line-height: 200px;
+    margin: 0 auto 10px;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+  }
+}
