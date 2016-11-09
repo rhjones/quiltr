@@ -25,6 +25,7 @@
 
 .pattern-card-buttons {
   text-align: right;
+  width: 36px;
 
   a,
   a:focus,
@@ -35,5 +36,17 @@
 
   a:hover {
     color: $hotpink;
+  }
+}
+
+.single-pattern {
+  padding-top: 20px;
+
+  .pattern-svg {
+    text-align: center;
+
+    svg {
+      width: 100%;
+    }
   }
 }

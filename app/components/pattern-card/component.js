@@ -7,10 +7,8 @@ import Ember from 'ember';
 // pattern-card --> make-button
 // pattern-card --> favorite-button
 // pattern-card --> pattern-canvas
+// pattern-card --> pattern-metadata
 
 
 export default Ember.Component.extend({
-  plural: Ember.computed('pattern.colors', function() {
-    return this.get('pattern.colors') > 1 ? 's' : '';
-  })
 });

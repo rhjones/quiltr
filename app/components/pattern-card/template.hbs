@@ -7,11 +7,7 @@
     </div>
   {{/link-to}}
   <div class="card-caption">
-    <p>
-      {{pattern.quiltSize}} | 
-      {{pattern.colors}} color{{plural}} | 
-      {{pattern.blockSize}}" blocks
-    </p>
+    {{pattern-metadata pattern=pattern}}
 
     <p class="pattern-card-buttons">
       {{favorite-button pattern=pattern favorite=pattern.currentUserFavorite}} 

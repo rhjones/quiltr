@@ -1,13 +1,11 @@
-<h2>Single pattern!</h2>
+<div class="col-md-6 single-pattern">
 
-<div class="col-md-6">
+  <div class="meta">
+    {{pattern-metadata pattern=model}}
 
-  {{pattern-metadata pattern=model}}
-
-  <p>Current user favorite: {{model.currentUserFavorite}}</p>
-
-  {{favorite-button pattern=model favorite=model.currentUserFavorite}} 
-  {{make-button pattern=model}}
+    {{favorite-button pattern=model favorite=model.currentUserFavorite}} 
+    {{make-button pattern=model}}
+  </div>
 
   <div class="pattern-svg">
     {{{model.svg}}}
@@ -16,7 +14,7 @@
 </div>
 
 <div class="col-md-6">
-  <h2>Projects based on this pattern</h2>
+  <h1>Projects based on this pattern</h1>
   <div class="row">
     {{#each model.projects as |project|}}
       {{project-card project=project class="col-xs-12 col-sm-6"}}
