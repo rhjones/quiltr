@@ -1,75 +1,88 @@
-<h1>Create a pattern</h1>
-
-<form {{ action 'generatePattern' on='submit'}}>
-  <label for="quiltsize">Quilt Size</label>
-  <div>
-    <div class="btn-group" role="group" data-toggle="buttons">
-      <label class="btn btn-default active">
-        <input type="radio" name="quiltSize" value="lap" checked>
-        Lap
-      </label>
-      <label class="btn btn-default">
-        <input type="radio" name="quiltSize" value="baby">
-        Baby
-      </label>
-      <label class="btn btn-default">
-        <input type="radio" name="quiltSize" value="twin">
-        Twin
-      </label>
-      <label class="btn btn-default">
-        <input type="radio" name="quiltSize" value="full">
-        Double/Full
-      </label>
-      <label class="btn btn-default">
-        <input type="radio" name="quiltSize" value="queen">
-        Queen
-      </label>
-      <label class="btn btn-default">
-        <input type="radio" name="quiltSize" value="king">
-        King
-      </label>
+<div class="col-md-6">
+  <h1>Create a pattern</h1>
+  <form {{ action 'generatePattern' on='submit'}}>
+    <label for="quiltsize">Quilt Size</label>
+    <p>How big do you want your quilt to be? For precise dimensions, see the {{#link-to 'faq'}}FAQ{{/link-to}}.</p>
+    <div>
+      <div class="btn-group" role="group" data-toggle="buttons">
+        <label class="btn btn-default active">
+          <input type="radio" name="quiltSize" value="lap" checked>
+          Lap
+        </label>
+        <label class="btn btn-default">
+          <input type="radio" name="quiltSize" value="baby">
+          Baby
+        </label>
+        <label class="btn btn-default">
+          <input type="radio" name="quiltSize" value="twin">
+          Twin
+        </label>
+        <label class="btn btn-default">
+          <input type="radio" name="quiltSize" value="full">
+          Double/Full
+        </label>
+        <label class="btn btn-default">
+          <input type="radio" name="quiltSize" value="queen">
+          Queen
+        </label>
+        <label class="btn btn-default">
+          <input type="radio" name="quiltSize" value="king">
+          King
+        </label>
+      </div>
     </div>
+
+    <label for="colors">Colors</label>
+    <p>How many colors would you like? All quilts have a white background color by default.</p>
+    <div>
+      <div class="btn-group" role="group" data-toggle="buttons">
+        <label class="btn btn-default active">
+          <input type="radio" name="colors" value="1" checked> One
+        </label>
+        <label class="btn btn-default">
+          <input type="radio" name="colors" value="2"> Two
+        </label>
+        <label class="btn btn-default">
+            <input type="radio" name="colors" value="3"> Three
+        </label>
+        <label class="btn btn-default">
+            <input type="radio" name="colors" value="4"> Four
+        </label>
+        <label class="btn btn-default">
+            <input type="radio" name="colors" value="5"> Five
+        </label>
+      </div>
+    </div>
+
+    <label for="blockSize">Block Size</label>
+    <p>How big would you like each individual block to be?</p>
+    <div>
+      <div class="btn-group" role="group" data-toggle="buttons">
+        <label class="btn btn-default">
+          <input type="radio" name="blockSize" value="6" checked> 6"
+        </label>
+        <label class="btn btn-default active">
+          <input type="radio" name="blockSize" value="12" checked> 12"
+        </label>
+      </div>
+    </div>
+    
+    <div>
+      <input class="btn btn-default" type="submit" id="submit" value="Make some magic">
+    </div>
+
+  </form>
+</div>
+
+<div class="col-md-6 pattern-canvas-container-div-test">
+
+  <div class="generate-meta">
+    {{sign-in-prompt}}
+
+    {{store-pattern storeAndFavoritePattern='storeAndFavoritePattern'}}
+    
   </div>
 
-  <label for="colors">Colors</label>
-  <div>
-    <div class="btn-group" role="group" data-toggle="buttons">
-      <label class="btn btn-default active">
-        <input type="radio" name="colors" value="1" checked> One
-      </label>
-      <label class="btn btn-default">
-        <input type="radio" name="colors" value="2"> Two
-      </label>
-      <label class="btn btn-default">
-          <input type="radio" name="colors" value="3"> Three
-      </label>
-      <label class="btn btn-default">
-          <input type="radio" name="colors" value="4"> Four
-      </label>
-      <label class="btn btn-default">
-          <input type="radio" name="colors" value="5"> Five
-      </label>
-    </div>
-  </div>
+  {{pattern-canvas}}
 
-  <label for="blockSize">Block Size</label>
-  <div>
-    <div class="btn-group" role="group" data-toggle="buttons">
-      <label class="btn btn-default">
-        <input type="radio" name="blockSize" value="6" checked> 6"
-      </label>
-      <label class="btn btn-default active">
-        <input type="radio" name="blockSize" value="12" checked> 12"
-      </label>
-    </div>
-  </div>
-  
-  <input class="btn btn-default" type="submit" id="submit" value="Submit">
-
-</form>
-
-{{sign-in-prompt}}
-
-{{store-pattern storeAndFavoritePattern='storeAndFavoritePattern'}}
-
-{{pattern-canvas}}
+</div>

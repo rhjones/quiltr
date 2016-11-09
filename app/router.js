@@ -19,6 +19,7 @@ Router.map(function () {
   this.route('generate');
   this.route('newproject', { path: '/patterns/:pattern_id/newproject'});
   this.route('my-projects');
+  this.route('faq');
 });
 
 export default Router;
