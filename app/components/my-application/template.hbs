@@ -2,9 +2,11 @@
   {{nav-bar signOut='signOut'}}
 
   <div class="container-fluid main">
-    {{#each flashMessages.queue as |flash|}}
-      {{flash-message flash=flash}}
-    {{/each}}
+    <div class="alerts">
+      {{#each flashMessages.queue as |flash|}}
+        {{custom-flash flash=flash}}
+      {{/each}}
+    </div>
 
     {{outlet}}
 

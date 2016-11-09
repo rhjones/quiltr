@@ -72,3 +72,21 @@ h6 {
     width: 100%;
   }
 }
+
+.alerts {
+  height: 50px;
+  margin-top: 20px;
+
+
+  .alert {
+    height: 50px;
+    margin: 0 auto;
+    padding: 17px;
+    background: $white;
+    border: 1px solid $green;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 300px;
+    width: 50%;
+  }
+}
