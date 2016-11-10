@@ -38,7 +38,9 @@
     {{#if model.startDate}}
       <p>Started: {{formatDate model.startDate}}</p>
     {{/if}}
-    <p>Finished: {{#if model.finishDate}}{{model.finishDate}}{{/if}}</p>
+    {{#if model.finishDate}}
+      <p>Finished: {{formatDate model.finishDate}}</p>
+    {{/if}}
   </div>
   <h2>Original Pattern</h2>
   {{pattern-card pattern=model.pattern}}
