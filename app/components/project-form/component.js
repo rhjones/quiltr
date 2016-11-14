@@ -28,7 +28,7 @@ export default Ember.Component.extend({
       if(this.get('project.id')) {
         this.get('project').set('startDate', startDate);
         this.get('project').set('finishDate', finishDate);
-        this.get('project').set('finished', this.$('#finished').val());
+        this.get('project').set('finished', (this.$('#finished').val() === 'true'));
         this.sendAction('updateProject', this.get('project'));
       } else {
         let newProject = {
@@ -36,7 +36,7 @@ export default Ember.Component.extend({
           name: this.get('project.name'),
           startDate: startDate,
           finishDate: finishDate,
-          finished: this.$('#finished').val(),
+          finished: (this.$('#finished').val() === 'true'),
           notes: this.get('project.notes'),
           pattern: this.get('pattern'),
         };

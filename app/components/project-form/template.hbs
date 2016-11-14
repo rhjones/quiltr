@@ -17,10 +17,11 @@
   <div class="form-group">
     <label for="finished">Project Status</label>
     <select id="finished">
-      <option value="false">In progress</option>
       {{#if project.finished}}
+        <option value="false">In progress</option>
         <option value="true" selected>Completed</option>
       {{else}}
+        <option value="false" selected>In progress</option>
         <option value="true">Completed</option>
       {{/if}}
     </select>
