@@ -3,38 +3,12 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
   patternData: {},
-  colorSchemes: [
-    {
-      neon: ['rgba(255,0,102,1)'],
-      pool: ['rgba(5,131,156,1)'],
-      papaya: ['#01744d'],
-      purple: ['#7e4264'],
-    },
-    {
-      neon: ['rgba(0,255,200,1)', 'rgba(176,255,5,1)'],
-      pool: ['rgba(52,194,182,1)', 'rgba(5,131,156,1)'],
-      papaya: ['#e24e42', '#e9b000'],
-      purple: ['#452445', '#7e4264'],
-    },
-    {
-      neon: ['rgba(0,255,200,1)', 'rgba(176,255,5,1)', 'rgba(255,0,102,1)'],
-      pool: ['rgba(52,194,182,1)', 'rgba(202,196,208,1)', 'rgba(182,241,29,1)'],
-      papaya: ['#e24e42', '#e9b000', '#e86e80'],
-      purple: ['#452445', '#7e4264', '#ff8851'],
-    },
-    {
-      neon: ['rgba(0,255,200,1)', 'rgba(255,179,0,1)', 'rgba(176,255,5,1)', 'rgba(255,0,102,1)'],
-      pool: ['rgba(52,194,182,1)', 'rgba(202,196,208,1)', 'rgba(182,241,29,1)', 'rgba(5,131,156,1)'],
-      papaya: ['#e24e42', '#e9b000', '#e86e80', '#008f95'],
-      purple: ['#452445', '#7e4264', '#ff8851', '#69b49d'],
-    },
-    {
-      neon: ['rgba(0,255,200,1)', 'rgba(255,179,0,1)', 'rgba(176,255,5,1)', 'rgba(255,0,102,1)', 'rgba(112,141,145,1)'],
-      pool: ['rgba(52,194,182,1)', 'rgba(251,246,40,1)', 'rgba(202,196,208,1)', 'rgba(182,241,29,1)', 'rgba(5,131,156,1)'],
-      papaya: ['#e24e42', '#e9b000', '#e86e80', '#008f95', '#01744d'],
-      purple: ['#452445', '#7e4264', '#ff8851', '#69b49d', '#ecc125']
-    },
-  ],
+  colorSchemes: {
+    neon: ['rgba(0,255,200,1)', 'rgba(255,179,0,1)', 'rgba(176,255,5,1)', 'rgba(255,0,102,1)', 'rgba(112,141,145,1)'],
+    pool: ['rgba(52,194,182,1)', 'rgba(251,246,40,1)', 'rgba(202,196,208,1)', 'rgba(182,241,29,1)', 'rgba(5,131,156,1)'],
+    papaya: ['#e24e42', '#e9b000', '#e86e80', '#008f95', '#01744d'],
+    purple: ['#452445', '#7e4264', '#ff8851', '#69b49d', '#ecc125']
+  },
   sizes: {
     lap: {
       width: 36,
@@ -91,23 +65,19 @@ export default Ember.Service.extend({
     return path;
   },
   calculateDimensions(quiltSize, blockSize) {
-    let quiltWidth = this.get('sizes')[quiltSize].width;
-    let quiltHeight = this.get('sizes')[quiltSize].height;
-    let columns = quiltWidth / blockSize;
-    let rows = quiltHeight / blockSize;
     let dimensions = {
-      quiltWidth: quiltWidth,
-      quiltHeight: quiltHeight, 
-      columns: columns, 
-      rows: rows,
+      quiltWidth: this.get('sizes')[quiltSize].width,
+      quiltHeight: this.get('sizes')[quiltSize].height, 
+      columns: this.get('sizes')[quiltSize].width / blockSize, 
+      rows: this.get('sizes')[quiltSize].height / blockSize,
     };
     return dimensions;
   },
   getColorScheme(colors) {
-    let schemeKeys = Object.keys(this.get('colorSchemes')[0]);
+    let schemeKeys = Object.keys(this.get('colorSchemes'));
     let schemeKey = schemeKeys[Math.floor((schemeKeys.length * Math.random()) * 1)];
     this.get('patternData').colorScheme = schemeKey;
-    return this.get('colorSchemes')[colors - 1][schemeKey];
+    return this.get('colorSchemes')[schemeKey].slice(0, colors);
   },
   generatePattern() {
     let quiltSize = Ember.$("input:radio[name='quiltSize']:checked").val();
@@ -120,10 +90,11 @@ export default Ember.Service.extend({
     this.get('patternData').quiltSize = quiltSize;
     this.get('patternData').colors = colors;
     this.get('patternData').blockSize = blockSize;
+
     let dimensions = this.calculateDimensions(quiltSize, blockSize);
     let colorScheme = this.getColorScheme(colors);
 
-    // set up canvas & patternBlockSize
+    // set up canvas & patternBlockSize for rendering
     let patternCanvas = new fabric.StaticCanvas('canvas');
     patternCanvas.renderOnAddRemove = false;
     let container = Ember.$('.canvas-container');
