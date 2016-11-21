@@ -1,0 +1,11 @@
+{
+  "name": "ga-wdi-boston.ember-auth",
+  "dependencies": {
+    "ember": "~2.8.0",
+    "ember-cli-shims": "0.1.1",
+    "ember-qunit-notifications": "0.1.0",
+    "bootstrap-sass": "^3.3.7",
+    "fabric.js": "fabric#^1.7.0",
+    "moment": "^2.16.0"
+  }
+}
